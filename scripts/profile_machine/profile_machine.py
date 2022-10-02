@@ -8,6 +8,29 @@ import os
 from datetime import datetime
 from pathlib import Path
 
+def get_mac_details():
+    mac_details = {}
+    sysctl_cmd = subprocess.run(
+        ['sysctl', 'hw.model'],
+        capture_output=True,
+        check=True
+    )
+    if sysctl_cmd.returncode == 0:
+        sed_cmd_1 = subprocess.run(
+            ['sed', 's/^.*: //'], 
+            input=sysctl_cmd.stdout,
+            capture_output=True,
+        )
+        sed_cmd_2 = subprocess.run(
+            ['sed', 's/,/./'], 
+            input=sed_cmd_1.stdout,
+            capture_output=True,
+        )
+        mac_details['filename_key'] = sed_cmd_2.stdout.decode('utf-8').strip()
+        return mac_details
+    else:
+        return None
+
 # Function to download the sample files
 def download_file(*, url, file_path):
     if not Path(file_path).is_file():
@@ -23,6 +46,19 @@ def download_file(*, url, file_path):
             os.rename(tmp_file_path, file_path)
     else:
         print(f"Already downloaded: {url}")
+
+def main():
+    machine_details = get_mac_details()
+    if machine_details == None:
+        print('TODO: Get EC2 and Windows Names')
+    print(machine_details)
+
+
+if __name__ == '__main__':
+    main()
+
+import sys
+sys.exit()
 
 # Load the config
 with open('config.json') as _config_json:
@@ -91,7 +127,9 @@ for test_file in data['test_files']:
             'time_delta': time_delta
         })
 
-with open('results.json', 'w') as _results:
-   json.dump(data, _results, sort_keys=True, indent=2, default=str)
+        # write the data after each run so you 
+        # don't lose everything if something crashes
+        with open('results.json', 'w') as _results:
+            json.dump(data, _results, sort_keys=True, indent=2, default=str)
 
 
