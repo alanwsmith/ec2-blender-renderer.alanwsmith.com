@@ -2,8 +2,10 @@
 
 import json
 import requests
+import subprocess
 import os
 
+from datetime import datetime
 from pathlib import Path
 
 # Function to download the sample files
@@ -24,56 +26,72 @@ def download_file(*, url, file_path):
 
 # Load the config
 with open('config.json') as _config_json:
-    config = json.load(_config_json)
+    data = json.load(_config_json)
 
 # Expand the home dir `~` to a full path
-config['profiler_directory'] = os.path.expanduser(config['profiler_directory'])
+data['profiler_directory'] = os.path.expanduser(data['profiler_directory'])
 
 # Set the path to the test files directory
 # (which will get created by the downloader 
 # if necessary)
-config['test_files_directory'] = os.path.join(
-    config['profiler_directory'], 
+data['test_files_directory'] = os.path.join(
+    data['profiler_directory'], 
     'test_files'
 )
 
 # Download the test files
-for test_file in config['test_files']:
+for test_file in data['test_files']:
+    test_file['test_runs'] = []
     test_file['file_name'] = test_file['url'].split('/')[-1]
     test_file['file_path'] = os.path.join(
-        config['test_files_directory'], 
+        data['test_files_directory'], 
         test_file['file_name']
     )
+    test_file['command'] = [
+        "/Applications/Blender.app/Contents/MacOS/Blender",
+        "-b", 
+        test_file['file_path'],
+        "-noaudio",
+        "-o",
+        "//render_##", 
+        "-E", 
+        "CYCLES",
+        "-f", 
+        "1", 
+        "-F",
+        "PNG", 
+        "-x",
+        "1",
+        "--", 
+        "--cycles-device",
+        "METAL"
+    ]
+
     download_file(
         url=test_file['url'],
         file_path=test_file['file_path']
     )
 
-    # Delete the file which always seems
-    # to have the same path for now so 
-    # hard coding to the mac
-    tmp_output_path = '/Users/alan/blender_profiler/test_files/0001.png'
-    if os.path.isfile(tmp_output_path):
-        os.unlink(tmp_output_path)
+    for test_run in range(1,6):
+        print(f"Doing test run: {test_run}")
+        test_render_path = os.path.join(data['test_files_directory'], 'render_01.png')
+        if os.path.isfile(test_render_path):
+            os.unlink(test_render_path)
+        start_time = datetime.now()
+        subprocess_results = subprocess.run(
+            test_file['command'],
+            capture_output=True,
+            check=True
+        )
+        end_time = datetime.now()
+        time_delta = end_time - start_time
+        test_file['test_runs'].append({
+            'start_time': start_time,
+            'end_time': end_time,
+            'time_delta': time_delta
+        })
 
-
-print(config)
-
-
-
-
-
-
-
-
-# print(config)
-
-#for test_file in test_files:
-#    file_name = test_file['url'].split('/')[-1]
-#    print(file_name)
-
-
-
-
+with open('results.json', 'w') as _results:
+   json.dump(data, _results, sort_keys=True, indent=2, default=str)
 
 
