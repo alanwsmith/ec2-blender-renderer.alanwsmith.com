@@ -48,7 +48,7 @@ for test_file in data['test_files']:
         test_file['file_name']
     )
     test_file['command'] = [
-        "/Applications/Blender.app/Contents/MacOS/Blender",
+        data['blender_path'],
         "-b", 
         test_file['file_path'],
         "-noaudio",
