@@ -64,7 +64,7 @@ def load_storehouse(machine_details):
             storehouse['profiler_directory'], 'test_files'
         )
         storehouse['results_directory'] = os.path.join(
-            storehouse['profiler_directory'], 'results'
+            'results'
         )
         storehouse['results_file_name'] = f"{machine_details['filename_key']}.json"
         storehouse['results_file_path'] = os.path.join(
@@ -113,7 +113,6 @@ def make_directories(storehouse):
         storehouse['results_directory'],
         storehouse['test_files_directory']
     ]:
-        
         Path(storehouse['results_directory']).mkdir(
             parents=True, exist_ok=True
         )
@@ -121,6 +120,34 @@ def make_directories(storehouse):
 def output_results(storehouse):
     with open(storehouse['results_file_path'], 'w') as _results:
         json.dump(storehouse, _results, sort_keys=True, indent=2, default=str)
+
+
+def run_tests(storehouse):
+    for test_file in storehouse['test_files']:
+        for test_run in range(1,4):
+            log(f"Doing test run: {test_run} - {test_file['url']}")
+            test_render_path = os.path.join(storehouse['test_files_directory'], 'render_01.png')
+            if os.path.isfile(test_render_path):
+                os.unlink(test_render_path)
+            start_time = datetime.now()
+            subprocess_results = subprocess.run(
+                test_file['command'],
+                capture_output=True,
+                check=True
+            )
+            end_time = datetime.now()
+            time_delta = end_time - start_time
+            test_file['test_runs'].append({
+                'start_time': start_time,
+                'end_time': end_time,
+                'time_delta': time_delta
+            })
+
+            # write the data after each run so you 
+            # don't lose everything if something crashes
+            with open(storehouse['results_file_path'], 'w') as _results:
+                json.dump(storehouse, _results, sort_keys=True, indent=2, default=str)
+
 
 
 def main():
@@ -132,10 +159,10 @@ def main():
         sys.exit()
     storehouse = load_storehouse(machine_details)
     make_directories(storehouse)
-    # download_sample_files(storehouse)
-    # output_results(storehouse)
-    # log("Process complete")
-
+    download_sample_files(storehouse)
+    output_results(storehouse)
+    run_tests(storehouse)
+    log("Process complete")
 
 if __name__ == '__main__':
     main()
