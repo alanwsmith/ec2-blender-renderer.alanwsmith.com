@@ -1,12 +1,21 @@
 {
-	"blender_path": "/Applications/Blender.app/Contents/MacOS/Blender",
 	"profiler_directory": "~/blender_profiler",
 	"test_files": [
 		{
-			"url": "https://download.blender.org/demo/hair_comb.blend"
+			"url": "https://download.blender.org/demo/cycles/lone-monk_cycles_and_exposure-node_demo.blend",
+			"_note": "This file is ~36MB"
 		},
 		{
-			"url": "https://4c3b-73-224-115-135.ngrok.io/basic-cube.blend"
+			"url": "https://download.blender.org/demo/cycles/monster_under_the_bed_sss_demo_by_metin_seven.blend",
+			"_note": "This file is ~78MB"
+		},
+		{
+			"url": "https://download.blender.org/demo/cycles/flat-archiviz.blend",
+			"_note": "This file is ~368MB"
+		},
+		{
+			"url": "https://download.blender.org/demo/cycles/loft.blend",
+			"_note": "This file is ~561MB"
 		}
 	]
 }

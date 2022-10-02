@@ -1,0 +1,113 @@
+{
+  "profiler_directory": "/Users/alan/blender_profiler",
+  "results_directory": "results",
+  "results_file_name": "MacBookPro18.4.json",
+  "results_file_path": "results/MacBookPro18.4.json",
+  "test_files": [
+    {
+      "_note": "This file is ~36MB",
+      "command": [
+        "/Applications/Blender.app/Contents/MacOS/Blender",
+        "-b",
+        "/Users/alan/blender_profiler/test_files/lone-monk_cycles_and_exposure-node_demo.blend",
+        "-noaudio",
+        "-o",
+        "//render_##",
+        "-E",
+        "CYCLES",
+        "-f",
+        "1",
+        "-F",
+        "PNG",
+        "-x",
+        "1",
+        "--",
+        "--cycles-device",
+        "METAL"
+      ],
+      "file_name": "lone-monk_cycles_and_exposure-node_demo.blend",
+      "file_path": "/Users/alan/blender_profiler/test_files/lone-monk_cycles_and_exposure-node_demo.blend",
+      "test_runs": [],
+      "url": "https://download.blender.org/demo/cycles/lone-monk_cycles_and_exposure-node_demo.blend"
+    },
+    {
+      "_note": "This file is ~78MB",
+      "command": [
+        "/Applications/Blender.app/Contents/MacOS/Blender",
+        "-b",
+        "/Users/alan/blender_profiler/test_files/monster_under_the_bed_sss_demo_by_metin_seven.blend",
+        "-noaudio",
+        "-o",
+        "//render_##",
+        "-E",
+        "CYCLES",
+        "-f",
+        "1",
+        "-F",
+        "PNG",
+        "-x",
+        "1",
+        "--",
+        "--cycles-device",
+        "METAL"
+      ],
+      "file_name": "monster_under_the_bed_sss_demo_by_metin_seven.blend",
+      "file_path": "/Users/alan/blender_profiler/test_files/monster_under_the_bed_sss_demo_by_metin_seven.blend",
+      "test_runs": [],
+      "url": "https://download.blender.org/demo/cycles/monster_under_the_bed_sss_demo_by_metin_seven.blend"
+    },
+    {
+      "_note": "This file is ~368MB",
+      "command": [
+        "/Applications/Blender.app/Contents/MacOS/Blender",
+        "-b",
+        "/Users/alan/blender_profiler/test_files/flat-archiviz.blend",
+        "-noaudio",
+        "-o",
+        "//render_##",
+        "-E",
+        "CYCLES",
+        "-f",
+        "1",
+        "-F",
+        "PNG",
+        "-x",
+        "1",
+        "--",
+        "--cycles-device",
+        "METAL"
+      ],
+      "file_name": "flat-archiviz.blend",
+      "file_path": "/Users/alan/blender_profiler/test_files/flat-archiviz.blend",
+      "test_runs": [],
+      "url": "https://download.blender.org/demo/cycles/flat-archiviz.blend"
+    },
+    {
+      "_note": "This file is ~561MB",
+      "command": [
+        "/Applications/Blender.app/Contents/MacOS/Blender",
+        "-b",
+        "/Users/alan/blender_profiler/test_files/loft.blend",
+        "-noaudio",
+        "-o",
+        "//render_##",
+        "-E",
+        "CYCLES",
+        "-f",
+        "1",
+        "-F",
+        "PNG",
+        "-x",
+        "1",
+        "--",
+        "--cycles-device",
+        "METAL"
+      ],
+      "file_name": "loft.blend",
+      "file_path": "/Users/alan/blender_profiler/test_files/loft.blend",
+      "test_runs": [],
+      "url": "https://download.blender.org/demo/cycles/loft.blend"
+    }
+  ],
+  "test_files_directory": "/Users/alan/blender_profiler/test_files"
+}
