@@ -11,22 +11,21 @@ from pathlib import Path
 
 def download_sample_files(storehouse):
     for test_file in storehouse['test_files']:
-        print(test_file)
-
-
-    # if not Path(file_path).is_file():
-    #     print(f"Downloading: {url}")
-    #     dir_path = os.path.dirname(file_path)
-    #     Path(dir_path).mkdir(parents=True, exist_ok=True)
-    #     with requests.get(url, stream=True) as response:
-    #         response.raise_for_status()
-    #         tmp_file_path = f'{file_path}.tmp'
-    #         with open(tmp_file_path, 'wb') as f:
-    #             for chunk in response.iter_content(chunk_size=8192):
-    #                 f.write(chunk)
-    #         os.rename(tmp_file_path, file_path)
-    # else:
-    #     print(f"Already downloaded: {url}")
+        url = test_file['url']
+        file_path = test_file['file_path']
+        if not Path(file_path).is_file():
+            print(f"Downloading: {url}")
+            dir_path = os.path.dirname(file_path)
+            Path(dir_path).mkdir(parents=True, exist_ok=True)
+            with requests.get(url, stream=True) as response:
+                response.raise_for_status()
+                tmp_file_path = f'{file_path}.tmp'
+                with open(tmp_file_path, 'wb') as f:
+                    for chunk in response.iter_content(chunk_size=8192):
+                        f.write(chunk)
+                os.rename(tmp_file_path, file_path)
+        else:
+            print(f"Already downloaded: {url}")
 
 def get_mac_details():
     mac_details = {
@@ -98,8 +97,8 @@ def main():
         import sys
         sys.exit()
     storehouse = load_storehouse(machine_details)
-    print(storehouse)
-    # download_sample_files(storehouse)
+    # print(storehouse)
+    download_sample_files(storehouse)
 
 
 
