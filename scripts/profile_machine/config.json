@@ -3,6 +3,9 @@
 	"test_files": [
 		{
 			"url": "https://download.blender.org/demo/hair_comb.blend"
+		},
+		{
+			"url": "https://4c3b-73-224-115-135.ngrok.io/basic-cube.blend"
 		}
 	]
 }
