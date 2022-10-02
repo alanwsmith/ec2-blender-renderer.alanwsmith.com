@@ -7,7 +7,6 @@ import os
 
 from datetime import datetime
 from pathlib import Path
-# from plog import plog
 
 def download_sample_files(storehouse):
     for test_file in storehouse['test_files']:
