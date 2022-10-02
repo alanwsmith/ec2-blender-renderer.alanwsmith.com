@@ -69,6 +69,7 @@ def get_mac_details():
 
 def load_storehouse(machine_details):
     log("Loading The Storehouse")
+    # Set the call params based on machine type
     blender_path = 'blender'
     cycles_device = 'CUDA'
     if machine_details['type'] == 'mac':
@@ -76,6 +77,7 @@ def load_storehouse(machine_details):
         cycles_device = 'METAL'
     with open('config.json') as _config_json:
         storehouse = json.load(_config_json)
+        storehouse['machine_details'] = machine_details
         storehouse['profiler_directory'] = os.path.expanduser(storehouse['profiler_directory'])
         storehouse['test_files_directory'] = os.path.join(
             storehouse['profiler_directory'], 'test_files'
@@ -83,17 +85,26 @@ def load_storehouse(machine_details):
         storehouse['results_directory'] = os.path.join(
             'results'
         )
-        storehouse['results_file_name'] = f"{machine_details['filename_key']}.json"
-        storehouse['results_file_path'] = os.path.join(
-            storehouse['results_directory'], 
-            storehouse['results_file_name']
-        )
+        
+        # # Rmove this when finish transitioing to
+        # # individul results files for each file
+        # storehouse['results_file_name'] = f"{machine_details['filename_key']}.json"
+        # storehouse['results_file_path'] = os.path.join(
+        #     storehouse['results_directory'], 
+        #     storehouse['results_file_name']
+        # )
+
         for test_file in storehouse['test_files']:
             test_file['test_runs'] = []
             test_file['file_name'] = test_file['url'].split('/')[-1]
             test_file['file_path'] = os.path.join(
                 storehouse['test_files_directory'], 
                 test_file['file_name']
+            )
+            test_file['results_file_name'] = f"{machine_details['filename_key']}-{test_file['file_name']}.json"
+            test_file['results_file_path'] = os.path.join(
+                storehouse['results_directory'], 
+                test_file['results_file_name']
             )
             test_file['command'] = [
                 blender_path,
@@ -134,37 +145,44 @@ def make_directories(storehouse):
             parents=True, exist_ok=True
         )
 
-def output_results(storehouse):
-    log("Outputting Results")
-    with open(storehouse['results_file_path'], 'w') as _results:
-        json.dump(storehouse, _results, sort_keys=True, indent=2, default=str)
+# def output_results(storehouse):
+#     log("Outputting Results")
+#     with open(storehouse['results_file_path'], 'w') as _results:
+#         json.dump(storehouse, _results, sort_keys=True, indent=2, default=str)
 
 def run_tests(storehouse):
     log("Kicking Off Test Run")
     for test_file in storehouse['test_files']:
-        for test_run in range(1,4):
-            log(f"Doing test run: {test_run} - {test_file['url']}")
-            test_render_path = os.path.join(storehouse['test_files_directory'], 'render_01.png')
-            if os.path.isfile(test_render_path):
-                os.unlink(test_render_path)
-            start_time = datetime.now()
-            subprocess_results = subprocess.run(
-                test_file['command'],
-                capture_output=True,
-                check=True
-            )
-            end_time = datetime.now()
-            time_delta = end_time - start_time
-            test_file['test_runs'].append({
-                'start_time': start_time,
-                'end_time': end_time,
-                'time_delta': time_delta
-            })
+        results_details = {
+            "machine_details": storehouse['machine_details'],
+            "test_runs": []
+        }
+        if not Path(test_file['results_file_path']).is_file():
+            for test_run in range(1,4):
+                log(f"Doing test run: {test_run} - {test_file['url']}")
+                test_render_path = os.path.join(storehouse['test_files_directory'], 'render_01.png')
+                if os.path.isfile(test_render_path):
+                    os.unlink(test_render_path)
+                start_time = datetime.now()
+                subprocess_results = subprocess.run(
+                    test_file['command'],
+                    capture_output=True,
+                    check=True
+                )
+                end_time = datetime.now()
+                time_delta = end_time - start_time
+                results_details['test_runs'].append({
+                    'start_time': start_time,
+                    'end_time': end_time,
+                    'time_delta': time_delta
+                })
 
-            # write the data after each run so you 
-            # don't lose everything if something crashes
-            with open(storehouse['results_file_path'], 'w') as _results:
-                json.dump(storehouse, _results, sort_keys=True, indent=2, default=str)
+                # write the data after each run so you 
+                # don't lose everything if something crashes
+                with open(test_file['results_file_path'], 'w') as _results:
+                    json.dump(results_details, _results, sort_keys=True, indent=2, default=str)
+
+        log(f"SKIPPING: {test_file['results_file_path']} already exist")
 
 def main():
     log("Starting process")
@@ -176,7 +194,7 @@ def main():
         storehouse = load_storehouse(machine_details)
         make_directories(storehouse)
         download_sample_files(storehouse)
-        output_results(storehouse)
+        # output_results(storehouse)
         run_tests(storehouse)
         log("Process complete")
 
