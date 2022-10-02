@@ -9,6 +9,7 @@ from datetime import datetime
 from pathlib import Path
 
 def download_sample_files(storehouse):
+    log("Starting File Downloads")
     for test_file in storehouse['test_files']:
         url = test_file['url']
         file_path = test_file['file_path']
@@ -26,14 +27,29 @@ def download_sample_files(storehouse):
         else:
             log(f"Already downloaded: {url}")
 
+def get_aws_details():
+    log("Checking for AWS EC2 Details")
+    details = {
+        "type": "aws"
+    }
+    curl_cmd = subprocess.run(
+        ['curl', 'http://169.254.169.254/latest/meta-data/instance-type'], 
+        capture_output=True,
+    )
+    if curl_cmd.returncode == 0:
+        details['filename_key'] = curl_cmd.stdout.decode('utf-8').strip()
+        return details
+    else:
+        return None
+
 def get_mac_details():
+    log("Checking for Mac Details")
     mac_details = {
         "type": "mac"
     }
     sysctl_cmd = subprocess.run(
         ['sysctl', 'hw.model'],
         capture_output=True,
-        check=True
     )
     if sysctl_cmd.returncode == 0:
         sed_cmd_1 = subprocess.run(
@@ -52,6 +68,7 @@ def get_mac_details():
         return None
 
 def load_storehouse(machine_details):
+    log("Loading The Storehouse")
     blender_path = 'blender'
     cycles_device = 'CUDA'
     if machine_details['type'] == 'mac':
@@ -118,11 +135,12 @@ def make_directories(storehouse):
         )
 
 def output_results(storehouse):
+    log("Outputting Results")
     with open(storehouse['results_file_path'], 'w') as _results:
         json.dump(storehouse, _results, sort_keys=True, indent=2, default=str)
 
-
 def run_tests(storehouse):
+    log("Kicking Off Test Run")
     for test_file in storehouse['test_files']:
         for test_run in range(1,4):
             log(f"Doing test run: {test_run} - {test_file['url']}")
@@ -152,10 +170,7 @@ def main():
     log("Starting process")
     machine_details = get_mac_details()
     if machine_details == None:
-        log('TODO: Get EC2 and Windows Names')
-        import sys
-        sys.exit()
-
+        machine_details = get_aws_details()
     # Make sure you have details loaded before starting
     if machine_details != None:
         storehouse = load_storehouse(machine_details)
