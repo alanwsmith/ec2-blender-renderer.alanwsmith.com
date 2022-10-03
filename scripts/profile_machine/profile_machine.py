@@ -101,7 +101,7 @@ def load_storehouse(machine_details):
                 storehouse['test_files_directory'], 
                 test_file['file_name']
             )
-            test_file['results_file_name'] = f"{machine_details['filename_key']}-{test_file['file_name']}.json"
+            test_file['results_file_name'] = f"{machine_details['filename_key']}--{test_file['file_name']}.json"
             test_file['results_file_path'] = os.path.join(
                 storehouse['results_directory'], 
                 test_file['results_file_name']
