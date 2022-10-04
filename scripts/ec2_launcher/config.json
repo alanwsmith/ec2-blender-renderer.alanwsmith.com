@@ -1,0 +1,9 @@
+{
+  "machines": [
+    {
+      "_notes": "basic amazon 2 linux instance",
+      "image-id": "ami-026b57f3c383c2eec",
+
+
+  ]
+}
