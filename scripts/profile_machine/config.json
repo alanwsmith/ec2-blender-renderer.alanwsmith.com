@@ -4,6 +4,12 @@
 		{
 			"url": "https://download.blender.org/demo/cycles/monster_under_the_bed_sss_demo_by_metin_seven.blend",
 			"_note": "This file is ~78MB"
+		}
+	],
+	"test_files_holding": [
+		{
+			"url": "https://download.blender.org/demo/cycles/monster_under_the_bed_sss_demo_by_metin_seven.blend",
+			"_note": "This file is ~78MB"
 		},
 		{
 			"url": "https://download.blender.org/demo/cycles/flat-archiviz.blend",
