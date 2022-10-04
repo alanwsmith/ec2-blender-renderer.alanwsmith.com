@@ -9,4 +9,4 @@ aws ec2 run-instances \
   --key-name "$AWS_KEYPAIR_EXAMPLE" \
   --tag-specifications \
   "ResourceType=instance,Tags=[{Key=Name,Value='Render Test 4ish'}]" \
-  --user-data file://user-data-run-script.bash
+  --user-data file://install-script.bash
