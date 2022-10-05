@@ -1,12 +1,12 @@
 {
 	"profiler_directory": "~/blender_profiler",
-	"test_files": [
+	"test_files_single": [
 		{
 			"url": "https://download.blender.org/demo/cycles/monster_under_the_bed_sss_demo_by_metin_seven.blend",
 			"_note": "This file is ~78MB"
 		}
 	],
-	"test_files_holding": [
+	"test_files": [
 		{
 			"url": "https://download.blender.org/demo/cycles/monster_under_the_bed_sss_demo_by_metin_seven.blend",
 			"_note": "This file is ~78MB"
