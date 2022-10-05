@@ -6,19 +6,31 @@
 # echo "--key-name $AWS_KEYPAIR_EXAMPLE"
 # echo "--iam-instance-profile Arn=$AWS_INSTANCE_PROFILE_EXAMPLE"
 
-cat 00-initial-boot.bash > _combined-install-script.bash
+echo "Building user-data script"
 
+cat 00-initial-boot.bash > _combined-install-script.bash
 ENCODED_DIRECTOR=`base64 reboot-setup-director.bash`
 echo "echo '$ENCODED_DIRECTOR' | base64 -d > /home/ubuntu/reboot-setup-director.bash" >> _combined-install-script.bash 
 
-ENCODED_01=`base64 01-first-reboot.bash`
-echo "echo '$ENCODED_01' | base64 -d > /home/ubuntu/reboot-setup/01-first-reboot.bash" >> _combined-install-script.bash 
+ENCODED_01=`base64 reboot-01.bash`
+echo "echo '$ENCODED_01' | base64 -d > /home/ubuntu/reboot-setup/reboot-01.bash" >> _combined-install-script.bash 
+
+ENCODED_02=`base64 reboot-02.bash`
+echo "echo '$ENCODED_02' | base64 -d > /home/ubuntu/reboot-setup/reboot-02.bash" >> _combined-install-script.bash 
+
+ENCODED_03=`base64 reboot-03.bash`
+echo "echo '$ENCODED_03' | base64 -d > /home/ubuntu/reboot-setup/reboot-03.bash" >> _combined-install-script.bash 
+
+ENCODED_04=`base64 reboot-04.bash`
+echo "echo '$ENCODED_04' | base64 -d > /home/ubuntu/reboot-setup/reboot-04.bash" >> _combined-install-script.bash 
+
+ENCODED_05=`base64 reboot-05.bash`
+echo "echo '$ENCODED_05' | base64 -d > /home/ubuntu/reboot-setup/reboot-05.bash" >> _combined-install-script.bash 
 
 
-#cat 01-first-reboot.bash > _combined-install-script.bash)" >> _combined-install-script.bash
+echo 'reboot' >> _combined-install-script.bash 
 
-# base64 -d IyEvYmluL2Jhc2gKCnRvdWNoICJmcm9tLXJlYm9vdDEtZGlyZWN0LnR4dCIKdG91Y2ggIi9ob21lL3VidW50dS9mcm9tLXJlYm9vdDItZnVsbC1wYXRoLnR4dCIKCg== > reboot1.bash
-
+echo "Launched EC2 Instance"
 
 aws ec2 run-instances \
   --user-data file://_combined-install-script.bash \
