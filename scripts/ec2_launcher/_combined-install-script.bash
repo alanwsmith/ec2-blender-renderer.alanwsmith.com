@@ -1,0 +1,17 @@
+#!/bin/bash
+
+su ubuntu -c 'echo "Prepping scripts" >> /home/ubuntu/log.txt'
+
+TARGET_DIR="/home/ubuntu/reboot-setup"
+
+su ubuntu -c "mkdir $TARGET_DIR"
+
+su ubuntu -c 'crontab -l > /home/ubuntu/crondata'
+echo "@reboot /home/ubuntu/reboot-setup-director.bash" >> /home/ubuntu/crondata
+su ubuntu -c 'crontab /home/ubuntu/crondata'
+rm /home/ubuntu/crondata
+
+su ubuntu -c 'echo "Rebooting from initial user-data script" >> /home/ubuntu/log.txt'
+reboot
+echo 'IyEvYmluL2Jhc2gKCkxPR19GSUxFPSIvaG9tZS91YnVudHUvcmVib290LWxvZy50eHQiClRBUkdFVF9ESVI9Ii9ob21lL3VidW50dS9yZWJvb3Qtc2V0dXAiCkFDVElWRV9GSUxFPWBscyAkVEFSR0VUX0RJUiB8IHNvcnQgfCBoZWFkIC0xYAoKZWNobyAiU3RhcnRpbmcgdXAiID4+ICRMT0dfRklMRQoKaWYgWyAteiAkQUNUSVZFX0ZJTEUgXQp0aGVuCiAgICBlY2hvICJObyBtb3JlIGZpbGVzIHRvIHByb2Nlc3MiID4+ICRMT0dfRklMRQogICAgY3JvbnRhYiAtbCA+IC9ob21lL3VidW50dS9jcm9uZGF0YQogICAgc2VkIC1pICdcL0ByZWJvb3QgdG91Y2ggXC9ob21lXC91YnVudHVcL3JlYm9vdC1zZXR1cC1kaXJlY3Rvci5iYXNoL2QnIC9ob21lL3VidW50dS9jcm9uZGF0YQogICAgY3JvbnRhYiAvaG9tZS91YnVudHUvY3JvbmRhdGEKICAgIHJtIC9ob21lL3VidW50dS9jcm9uZGF0YQogICAgZWNobyAiUmVib290IGRpcmVjdG9yIHJlbW92ZWQgZnJvbSBjcm9udGFiIiA+PiAkTE9HX0ZJTEUKICAgIGVjaG8gIlRPRE86IFJlbW92ZSB0aGUgcmVib290LXNldHVwIGRpcmVjdG9yeSBhbmQgZGlyZWN0b3J5IiA+PiAkTE9HX0ZJTEUKZWxzZQogIEFDVElWRV9GSUxFX1BBVEg9IiRUQVJHRVRfRElSLyRBQ1RJVkVfRklMRSIKICBlY2hvICJSdW5uaW5nOiAke0FDVElWRV9GSUxFX1BBVEh9IiA+PiAkTE9HX0ZJTEUKICAvYmluL2Jhc2ggJEFDVElWRV9GSUxFX1BBVEgKICBlY2hvICJSZW1vdmluZzogJHtBQ1RJVkVfRklMRV9QQVRIfSIgPj4gJExPR19GSUxFCiAgcm0gJEFDVElWRV9GSUxFX1BBVEgKICBlY2hvICJSZWJvb3RpbmciID4+ICRMT0dfRklMRQpmaSAgICAgICAgICAgCgo=' | base64 -d > /home/ubuntu/reboot-setup-director.bash
+echo 'IyEvYmluL2Jhc2gKCnRvdWNoICJmcm9tLXJlYm9vdDEtZGlyZWN0LnR4dCIKdG91Y2ggIi9ob21lL3VidW50dS9mcm9tLTAxLWZpcnN0LXJlYm9vdC1mdWxsLXBhdGgudHh0IgoKCgo=' | base64 -d > /home/ubuntu/reboot-setup/01-first-reboot.bash
