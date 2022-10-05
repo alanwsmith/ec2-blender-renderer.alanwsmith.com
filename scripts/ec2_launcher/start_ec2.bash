@@ -7,6 +7,7 @@ echo "--key-name $AWS_KEYPAIR_EXAMPLE"
 echo "--iam-instance-profile Arn=$AWS_INSTANCE_PROFILE_EXAMPLE"
 
 aws ec2 run-instances \
+  --user-data file://install-script.bash \
   --image-id ami-08c40ec9ead489470 \
   --instance-type g5.xlarge \
   --subnet-id "$AWS_PUBLIC_SUBNET_EXAMPLE" \
@@ -16,4 +17,4 @@ aws ec2 run-instances \
   --iam-instance-profile Arn=$AWS_INSTANCE_PROFILE_EXAMPLE \
   --tag-specifications \
   "ResourceType=instance,Tags=[{Key=Name,Value='Render Test 4ish'}]" \
-  --user-data file://install-script.bash
+  --block-device-mapping "[ { \"DeviceName\": \"/dev/sda1\", \"Ebs\": { \"VolumeSize\": 200 } } ]"
