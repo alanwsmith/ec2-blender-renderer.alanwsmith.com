@@ -125,6 +125,8 @@ def load_storehouse(machine_details):
                 "--cycles-device",
                 cycles_device
             ]
+            log(f"Setting up command:")
+            log(test_file['command'])
         return storehouse 
 
 def log(msg):
