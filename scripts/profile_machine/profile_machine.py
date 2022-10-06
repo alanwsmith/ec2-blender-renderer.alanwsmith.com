@@ -112,7 +112,7 @@ def load_storehouse(machine_details):
                 test_file['file_path'],
                 "-noaudio",
                 "-o",
-                "//render_##", 
+                f"//{test_file['file_name']}_##", 
                 "-E", 
                 "CYCLES",
                 "-f", 
