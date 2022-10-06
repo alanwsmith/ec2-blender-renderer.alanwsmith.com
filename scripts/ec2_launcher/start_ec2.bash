@@ -22,14 +22,17 @@ echo "echo '$ENCODED_02' | base64 -d > /home/ubuntu/reboot-setup/02-reboot.bash"
 ENCODED_03=`base64 03-reboot.bash`
 echo "echo '$ENCODED_03' | base64 -d > /home/ubuntu/reboot-setup/03-reboot.bash" >> _combined-install-script.bash 
 
-# ENCODED_04=`base64 04-reboot.bash`
-# echo "echo '$ENCODED_04' | base64 -d > /home/ubuntu/reboot-setup/04-reboot.bash" >> _combined-install-script.bash 
+ENCODED_04=`base64 04-reboot.bash`
+echo "echo '$ENCODED_04' | base64 -d > /home/ubuntu/reboot-setup/04-reboot.bash" >> _combined-install-script.bash 
 
-# ENCODED_04=`base64 reboot-04.bash`
-# echo "echo '$ENCODED_04' | base64 -d > /home/ubuntu/reboot-setup/reboot-04.bash" >> _combined-install-script.bash 
+ENCODED_05=`base64 05-reboot.bash`
+echo "echo '$ENCODED_05' | base64 -d > /home/ubuntu/reboot-setup/05-reboot.bash" >> _combined-install-script.bash 
 
-# ENCODED_05=`base64 reboot-05.bash`
-# echo "echo '$ENCODED_05' | base64 -d > /home/ubuntu/reboot-setup/reboot-05.bash" >> _combined-install-script.bash 
+ENCODED_05=`base64 05-reboot.bash`
+echo "echo '$ENCODED_05' | base64 -d > /home/ubuntu/reboot-setup/05-reboot.bash" >> _combined-install-script.bash 
+
+ENCODED_06=`base64 06-reboot.bash`
+echo "echo '$ENCODED_06' | base64 -d > /home/ubuntu/reboot-setup/06-reboot.bash" >> _combined-install-script.bash 
 
 
 echo 'reboot' >> _combined-install-script.bash 
