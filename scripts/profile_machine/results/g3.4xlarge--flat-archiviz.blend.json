@@ -1,0 +1,13 @@
+{
+  "machine_details": {
+    "filename_key": "g3.4xlarge",
+    "type": "aws"
+  },
+  "test_runs": [
+    {
+      "end_time": "2022-10-06 05:32:33.952137",
+      "start_time": "2022-10-06 05:23:10.387682",
+      "time_delta": "0:09:23.564455"
+    }
+  ]
+}
