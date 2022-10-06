@@ -11,5 +11,3 @@ make
 
 cd /home/ubuntu/cuda-samples/Samples/1_Utilities/bandwidthTest
 make
-
-cd /home/ubuntu
