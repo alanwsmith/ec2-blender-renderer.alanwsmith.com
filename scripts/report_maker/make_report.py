@@ -54,17 +54,22 @@ def load_raw_test_data():
             report['machines'][machine_type]['samples'][sample_name] = results_data
 
 
-def load_raw_pricing_data():
+def load_pricing_data():
     with open('data-from-ec2-price-list-project.json') as _price_file:
         price_data = json.load(_price_file)
         for instance in price_data:
             instance_type = instance['product']['attributes']['instanceType']
-            if instance_type in machines['details']:
-                cost = round(float(list(list(instance['terms']['OnDemand'].items())[0][1]['priceDimensions'].items())[0][1]['pricePerUnit']['USD']), 3)
-                machines['details'][instance_type] = {
-                    "cost_per_hour":cost,
-                    "cost_per_hour_display": "{:.3f}".format(cost)
+            if instance_type in report['machines']:
+                cost_per_hour = round(float(list(list(instance['terms']['OnDemand'].items())[0][1]['priceDimensions'].items())[0][1]['pricePerUnit']['USD']), 3)
+                cost_per_second = cost_per_hour / 60 / 60
+                report['machines'][instance_type]['costs'] = {
+                    "cost_per_hour":cost_per_hour,
+                    "cost_per_hour_display": "{:.3f}".format(cost_per_hour),
+                    "cost_per_second":cost_per_second,
+                    "cost_per_second_display": "{:.6f}".format(cost_per_second),
                 }
+
+
 
 def calculate_seconds():
     for machine_name in report['machines'].keys():
@@ -82,13 +87,11 @@ def calculate_seconds():
                 # print(sample_time_list)
                 # Drop the highest time to adjust for possible issues
                 # as sanity check
-
             sample_time_list.sort()
                 # if len(sample_time_list) > 1:
             sample_time_list.pop()
             sample['details']['seconds_average_adjusted'] = int(sum(sample_time_list) / len(sample_time_list))
             sample['details']['seconds_billing_minimum'] = max(sample['details']['seconds_average_adjusted'], 60)
-
 
 
 def output_report():
@@ -97,8 +100,8 @@ def output_report():
 
 if __name__ == '__main__':
     load_raw_test_data()
+    load_pricing_data()
     calculate_seconds()
-    #load_pricing_data()
     output_report()
 
 

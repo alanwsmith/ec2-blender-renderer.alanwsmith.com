@@ -117,6 +117,12 @@
       }
     },
     "g3.4xlarge": {
+      "costs": {
+        "cost_per_hour": 1.14,
+        "cost_per_hour_display": "1.140",
+        "cost_per_second": 0.00031666666666666665,
+        "cost_per_second_display": "0.000317"
+      },
       "samples": {
         "flat-archiviz": {
           "details": {
@@ -233,6 +239,12 @@
       }
     },
     "g3.8xlarge": {
+      "costs": {
+        "cost_per_hour": 2.28,
+        "cost_per_hour_display": "2.280",
+        "cost_per_second": 0.0006333333333333333,
+        "cost_per_second_display": "0.000633"
+      },
       "samples": {
         "flat-archiviz": {
           "details": {
@@ -349,6 +361,12 @@
       }
     },
     "g5.12xlarge": {
+      "costs": {
+        "cost_per_hour": 5.672,
+        "cost_per_hour_display": "5.672",
+        "cost_per_second": 0.0015755555555555555,
+        "cost_per_second_display": "0.001576"
+      },
       "samples": {
         "flat-archiviz": {
           "details": {
@@ -465,6 +483,12 @@
       }
     },
     "g5.16xlarge": {
+      "costs": {
+        "cost_per_hour": 4.096,
+        "cost_per_hour_display": "4.096",
+        "cost_per_second": 0.001137777777777778,
+        "cost_per_second_display": "0.001138"
+      },
       "samples": {
         "flat-archiviz": {
           "details": {
@@ -581,6 +605,12 @@
       }
     },
     "g5.24xlarge": {
+      "costs": {
+        "cost_per_hour": 8.144,
+        "cost_per_hour_display": "8.144",
+        "cost_per_second": 0.0022622222222222223,
+        "cost_per_second_display": "0.002262"
+      },
       "samples": {
         "flat-archiviz": {
           "details": {
@@ -697,6 +727,12 @@
       }
     },
     "g5.2xlarge": {
+      "costs": {
+        "cost_per_hour": 1.212,
+        "cost_per_hour_display": "1.212",
+        "cost_per_second": 0.00033666666666666665,
+        "cost_per_second_display": "0.000337"
+      },
       "samples": {
         "flat-archiviz": {
           "details": {
@@ -813,6 +849,12 @@
       }
     },
     "g5.4xlarge": {
+      "costs": {
+        "cost_per_hour": 1.624,
+        "cost_per_hour_display": "1.624",
+        "cost_per_second": 0.00045111111111111117,
+        "cost_per_second_display": "0.000451"
+      },
       "samples": {
         "flat-archiviz": {
           "details": {
@@ -929,6 +971,12 @@
       }
     },
     "g5.8xlarge": {
+      "costs": {
+        "cost_per_hour": 2.448,
+        "cost_per_hour_display": "2.448",
+        "cost_per_second": 0.0006799999999999999,
+        "cost_per_second_display": "0.000680"
+      },
       "samples": {
         "flat-archiviz": {
           "details": {
@@ -1045,6 +1093,12 @@
       }
     },
     "g5.xlarge": {
+      "costs": {
+        "cost_per_hour": 1.006,
+        "cost_per_hour_display": "1.006",
+        "cost_per_second": 0.0002794444444444444,
+        "cost_per_second_display": "0.000279"
+      },
       "samples": {
         "flat-archiviz": {
           "details": {
@@ -1161,6 +1215,12 @@
       }
     },
     "p2.8xlarge": {
+      "costs": {
+        "cost_per_hour": 7.2,
+        "cost_per_hour_display": "7.200",
+        "cost_per_second": 0.002,
+        "cost_per_second_display": "0.002000"
+      },
       "samples": {
         "flat-archiviz": {
           "details": {
