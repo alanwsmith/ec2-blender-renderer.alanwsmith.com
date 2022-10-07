@@ -10,8 +10,8 @@ echo "Building user-data script"
 
 cat initial-boot.bash > _combined-install-script.bash
 
-ENCODED_DIRECTOR=`base64 setup-director.bash`
-echo "echo '$ENCODED_DIRECTOR' | base64 -d > /home/ubuntu/setup-director.bash" >> _combined-install-script.bash 
+ENCODED_DIRECTOR=`base64 director.bash`
+echo "echo '$ENCODED_DIRECTOR' | base64 -d > /home/ubuntu/setup/director.bash" >> _combined-install-script.bash 
 
 ENCODED_01=`base64 setup-main/01.bash`
 echo "echo '$ENCODED_01' | base64 -d > /home/ubuntu/setup/steps/01.bash" >> _combined-install-script.bash 
