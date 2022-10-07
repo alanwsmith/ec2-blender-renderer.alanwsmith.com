@@ -25,9 +25,8 @@ gpu_names = {
     'g2': '(Not listed)'
 }
 
-machines = {
-    "details": {},
-    "prices": {}
+report = {
+    "machines": {}
 }
 
 samples = [
@@ -37,21 +36,23 @@ samples = [
     'monster_under_the_bed_sss_demo_by_metin_seven'
 ]
 
-def load_raw_data():
+def load_raw_test_data():
     results_files = [
         file for file in glob.glob(f"{results_dir}/*")
         if isfile(file)
     ]
     for results_file in results_files:
-        sample_name = results_file.split("--")[-1].split('.')[0]
         with open (results_file) as _results_data:
             results_data = json.load(_results_data)
-            filename_key = results_data['machine_details']['filename_key']
-            if filename_key not in machines['details']:
-                machines['details'][filename_key] = {
-                    'data': {} 
+            machine_type = results_data['machine_details']['filename_key']
+            sample_name = results_file.split("--")[-1].split('.')[0]
+            if machine_type not in report['machines']:
+                print(f"Adding machine type: {machine_type}")
+                report['machines'][machine_type] = {
+                    'samples': {}
                 }
-            machines['details'][filename_key]['data'][sample_name] = results_data
+            report['machines'][machine_type]['samples'][sample_name] = results_data
+
 
 def load_raw_pricing_data():
     with open('data-from-ec2-price-list-project.json') as _price_file:
@@ -65,12 +66,11 @@ def load_raw_pricing_data():
                     "cost_per_hour_display": "{:.3f}".format(cost)
                 }
 
-def add_calculations():
-    for key_name in machines['details'].keys():
-        machine_data = machines['details'][key_name]['data']
-
-        for sample in samples:
-            sample_time_list = []
+# def calculate_seconds():
+#     for machinein machines['details'].keys():
+#         machine_data = machines['details'][key_name]['data']
+#         for sample in samples:
+#             sample_time_list = []
 
             # for test_run in machine_data[sample]['test_runs']:
             #     start_time = datetime.fromisoformat(test_run['start_time'])
@@ -84,18 +84,14 @@ def add_calculations():
 
 
 
-
-
-
-
 def output_report():
     with open('report_data.json', 'w') as _report_out:
-        json.dump(machines, _report_out, sort_keys=True, indent=2, default=str)
+        json.dump(report, _report_out, sort_keys=True, indent=2, default=str)
 
 if __name__ == '__main__':
-    load_raw_data()
-    add_calculations()
-    load_raw_pricing_data()
+    load_raw_test_data()
+    # calculate_seconds()
+    #load_pricing_data()
     output_report()
 
 
