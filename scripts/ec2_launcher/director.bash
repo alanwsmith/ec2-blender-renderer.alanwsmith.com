@@ -17,7 +17,7 @@ then
     echo "$(date) - Removing $TARGET_DIR" >> $LOG_FILE
     rmdir $TARGET_DIR
     echo "$(date) - Removing setup-director.bash" >> $LOG_FILE
-    rm '/home/ubuntu/setup-director.bash'
+    rm '/home/ubuntu/setup/director.bash'
     echo "$(date) - SETUP PROCESS COMPLETE" >> $LOG_FILE
     echo "$(date) - Shutting down" >> $LOG_FILE
     sudo shutdown
