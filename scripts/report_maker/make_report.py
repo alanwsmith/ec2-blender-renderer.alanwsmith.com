@@ -92,6 +92,13 @@ def calculate_seconds():
             sample_time_list.pop()
             sample['details']['seconds_average_adjusted'] = int(sum(sample_time_list) / len(sample_time_list))
             sample['details']['seconds_billing_minimum'] = max(sample['details']['seconds_average_adjusted'], 60)
+            if 'costs' in report['machines'][machine_name]:
+                sample['details']['price_base'] = report['machines'][machine_name]['costs']['cost_per_second'] * sample['details']['seconds_average_adjusted']
+                sample['details']['price_base_display'] = "{:.3f}".format(sample['details']['price_base'])
+                sample['details']['price_60_sec_min'] = report['machines'][machine_name]['costs']['cost_per_second'] * sample['details']['seconds_billing_minimum']
+                sample['details']['price_60_sec_min_display'] = "{:.3f}".format(sample['details']['price_60_sec_min'])
+
+
 
 
 def output_report():

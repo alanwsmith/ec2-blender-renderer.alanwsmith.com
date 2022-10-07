@@ -126,6 +126,10 @@
       "samples": {
         "flat-archiviz": {
           "details": {
+            "price_60_sec_min": 0.17638333333333334,
+            "price_60_sec_min_display": "0.176",
+            "price_base": 0.17638333333333334,
+            "price_base_display": "0.176",
             "seconds_average_adjusted": 557,
             "seconds_average_full": 559,
             "seconds_billing_minimum": 557
@@ -154,6 +158,10 @@
         },
         "loft": {
           "details": {
+            "price_60_sec_min": 0.74195,
+            "price_60_sec_min_display": "0.742",
+            "price_base": 0.74195,
+            "price_base_display": "0.742",
             "seconds_average_adjusted": 2343,
             "seconds_average_full": 2343,
             "seconds_billing_minimum": 2343
@@ -182,6 +190,10 @@
         },
         "lone-monk_cycles_and_exposure-node_demo": {
           "details": {
+            "price_60_sec_min": 0.513,
+            "price_60_sec_min_display": "0.513",
+            "price_base": 0.513,
+            "price_base_display": "0.513",
             "seconds_average_adjusted": 1620,
             "seconds_average_full": 1620,
             "seconds_billing_minimum": 1620
@@ -210,6 +222,10 @@
         },
         "monster_under_the_bed_sss_demo_by_metin_seven": {
           "details": {
+            "price_60_sec_min": 0.1064,
+            "price_60_sec_min_display": "0.106",
+            "price_base": 0.1064,
+            "price_base_display": "0.106",
             "seconds_average_adjusted": 336,
             "seconds_average_full": 336,
             "seconds_billing_minimum": 336
@@ -248,6 +264,10 @@
       "samples": {
         "flat-archiviz": {
           "details": {
+            "price_60_sec_min": 0.20393333333333333,
+            "price_60_sec_min_display": "0.204",
+            "price_base": 0.20393333333333333,
+            "price_base_display": "0.204",
             "seconds_average_adjusted": 322,
             "seconds_average_full": 325,
             "seconds_billing_minimum": 322
@@ -276,6 +296,10 @@
         },
         "loft": {
           "details": {
+            "price_60_sec_min": 0.7923,
+            "price_60_sec_min_display": "0.792",
+            "price_base": 0.7923,
+            "price_base_display": "0.792",
             "seconds_average_adjusted": 1251,
             "seconds_average_full": 1253,
             "seconds_billing_minimum": 1251
@@ -304,6 +328,10 @@
         },
         "lone-monk_cycles_and_exposure-node_demo": {
           "details": {
+            "price_60_sec_min": 0.5250333333333334,
+            "price_60_sec_min_display": "0.525",
+            "price_base": 0.5250333333333334,
+            "price_base_display": "0.525",
             "seconds_average_adjusted": 829,
             "seconds_average_full": 831,
             "seconds_billing_minimum": 829
@@ -332,6 +360,10 @@
         },
         "monster_under_the_bed_sss_demo_by_metin_seven": {
           "details": {
+            "price_60_sec_min": 0.11146666666666666,
+            "price_60_sec_min_display": "0.111",
+            "price_base": 0.11146666666666666,
+            "price_base_display": "0.111",
             "seconds_average_adjusted": 176,
             "seconds_average_full": 178,
             "seconds_billing_minimum": 176
@@ -370,6 +402,10 @@
       "samples": {
         "flat-archiviz": {
           "details": {
+            "price_60_sec_min": 0.11816666666666667,
+            "price_60_sec_min_display": "0.118",
+            "price_base": 0.11816666666666667,
+            "price_base_display": "0.118",
             "seconds_average_adjusted": 75,
             "seconds_average_full": 77,
             "seconds_billing_minimum": 75
@@ -398,6 +434,10 @@
         },
         "loft": {
           "details": {
+            "price_60_sec_min": 0.1874911111111111,
+            "price_60_sec_min_display": "0.187",
+            "price_base": 0.1874911111111111,
+            "price_base_display": "0.187",
             "seconds_average_adjusted": 119,
             "seconds_average_full": 119,
             "seconds_billing_minimum": 119
@@ -426,6 +466,10 @@
         },
         "lone-monk_cycles_and_exposure-node_demo": {
           "details": {
+            "price_60_sec_min": 0.11816666666666667,
+            "price_60_sec_min_display": "0.118",
+            "price_base": 0.11816666666666667,
+            "price_base_display": "0.118",
             "seconds_average_adjusted": 75,
             "seconds_average_full": 75,
             "seconds_billing_minimum": 75
@@ -454,6 +498,10 @@
         },
         "monster_under_the_bed_sss_demo_by_metin_seven": {
           "details": {
+            "price_60_sec_min": 0.09453333333333333,
+            "price_60_sec_min_display": "0.095",
+            "price_base": 0.02836,
+            "price_base_display": "0.028",
             "seconds_average_adjusted": 18,
             "seconds_average_full": 19,
             "seconds_billing_minimum": 60
@@ -492,6 +540,10 @@
       "samples": {
         "flat-archiviz": {
           "details": {
+            "price_60_sec_min": 0.14108444444444446,
+            "price_60_sec_min_display": "0.141",
+            "price_base": 0.14108444444444446,
+            "price_base_display": "0.141",
             "seconds_average_adjusted": 124,
             "seconds_average_full": 126,
             "seconds_billing_minimum": 124
@@ -520,6 +572,10 @@
         },
         "loft": {
           "details": {
+            "price_60_sec_min": 0.37774222222222226,
+            "price_60_sec_min_display": "0.378",
+            "price_base": 0.37774222222222226,
+            "price_base_display": "0.378",
             "seconds_average_adjusted": 332,
             "seconds_average_full": 332,
             "seconds_billing_minimum": 332
@@ -548,6 +604,10 @@
         },
         "lone-monk_cycles_and_exposure-node_demo": {
           "details": {
+            "price_60_sec_min": 0.2935466666666667,
+            "price_60_sec_min_display": "0.294",
+            "price_base": 0.2935466666666667,
+            "price_base_display": "0.294",
             "seconds_average_adjusted": 258,
             "seconds_average_full": 258,
             "seconds_billing_minimum": 258
@@ -576,6 +636,10 @@
         },
         "monster_under_the_bed_sss_demo_by_metin_seven": {
           "details": {
+            "price_60_sec_min": 0.06826666666666667,
+            "price_60_sec_min_display": "0.068",
+            "price_base": 0.05461333333333334,
+            "price_base_display": "0.055",
             "seconds_average_adjusted": 48,
             "seconds_average_full": 49,
             "seconds_billing_minimum": 60
@@ -614,6 +678,10 @@
       "samples": {
         "flat-archiviz": {
           "details": {
+            "price_60_sec_min": 0.16740444444444444,
+            "price_60_sec_min_display": "0.167",
+            "price_base": 0.16740444444444444,
+            "price_base_display": "0.167",
             "seconds_average_adjusted": 74,
             "seconds_average_full": 76,
             "seconds_billing_minimum": 74
@@ -642,6 +710,10 @@
         },
         "loft": {
           "details": {
+            "price_60_sec_min": 0.26694222222222225,
+            "price_60_sec_min_display": "0.267",
+            "price_base": 0.26694222222222225,
+            "price_base_display": "0.267",
             "seconds_average_adjusted": 118,
             "seconds_average_full": 118,
             "seconds_billing_minimum": 118
@@ -670,6 +742,10 @@
         },
         "lone-monk_cycles_and_exposure-node_demo": {
           "details": {
+            "price_60_sec_min": 0.1696666666666667,
+            "price_60_sec_min_display": "0.170",
+            "price_base": 0.1696666666666667,
+            "price_base_display": "0.170",
             "seconds_average_adjusted": 75,
             "seconds_average_full": 75,
             "seconds_billing_minimum": 75
@@ -698,6 +774,10 @@
         },
         "monster_under_the_bed_sss_demo_by_metin_seven": {
           "details": {
+            "price_60_sec_min": 0.13573333333333334,
+            "price_60_sec_min_display": "0.136",
+            "price_base": 0.04072,
+            "price_base_display": "0.041",
             "seconds_average_adjusted": 18,
             "seconds_average_full": 19,
             "seconds_billing_minimum": 60
@@ -736,6 +816,10 @@
       "samples": {
         "flat-archiviz": {
           "details": {
+            "price_60_sec_min": 0.050499999999999996,
+            "price_60_sec_min_display": "0.050",
+            "price_base": 0.050499999999999996,
+            "price_base_display": "0.050",
             "seconds_average_adjusted": 150,
             "seconds_average_full": 153,
             "seconds_billing_minimum": 150
@@ -764,6 +848,10 @@
         },
         "loft": {
           "details": {
+            "price_60_sec_min": 0.11682333333333332,
+            "price_60_sec_min_display": "0.117",
+            "price_base": 0.11682333333333332,
+            "price_base_display": "0.117",
             "seconds_average_adjusted": 347,
             "seconds_average_full": 348,
             "seconds_billing_minimum": 347
@@ -792,6 +880,10 @@
         },
         "lone-monk_cycles_and_exposure-node_demo": {
           "details": {
+            "price_60_sec_min": 0.08786999999999999,
+            "price_60_sec_min_display": "0.088",
+            "price_base": 0.08786999999999999,
+            "price_base_display": "0.088",
             "seconds_average_adjusted": 261,
             "seconds_average_full": 261,
             "seconds_billing_minimum": 261
@@ -820,6 +912,10 @@
         },
         "monster_under_the_bed_sss_demo_by_metin_seven": {
           "details": {
+            "price_60_sec_min": 0.0202,
+            "price_60_sec_min_display": "0.020",
+            "price_base": 0.01616,
+            "price_base_display": "0.016",
             "seconds_average_adjusted": 48,
             "seconds_average_full": 49,
             "seconds_billing_minimum": 60
@@ -858,6 +954,10 @@
       "samples": {
         "flat-archiviz": {
           "details": {
+            "price_60_sec_min": 0.06090000000000001,
+            "price_60_sec_min_display": "0.061",
+            "price_base": 0.06090000000000001,
+            "price_base_display": "0.061",
             "seconds_average_adjusted": 135,
             "seconds_average_full": 135,
             "seconds_billing_minimum": 135
@@ -886,6 +986,10 @@
         },
         "loft": {
           "details": {
+            "price_60_sec_min": 0.1524755555555556,
+            "price_60_sec_min_display": "0.152",
+            "price_base": 0.1524755555555556,
+            "price_base_display": "0.152",
             "seconds_average_adjusted": 338,
             "seconds_average_full": 338,
             "seconds_billing_minimum": 338
@@ -914,6 +1018,10 @@
         },
         "lone-monk_cycles_and_exposure-node_demo": {
           "details": {
+            "price_60_sec_min": 0.1172888888888889,
+            "price_60_sec_min_display": "0.117",
+            "price_base": 0.1172888888888889,
+            "price_base_display": "0.117",
             "seconds_average_adjusted": 260,
             "seconds_average_full": 260,
             "seconds_billing_minimum": 260
@@ -942,6 +1050,10 @@
         },
         "monster_under_the_bed_sss_demo_by_metin_seven": {
           "details": {
+            "price_60_sec_min": 0.02706666666666667,
+            "price_60_sec_min_display": "0.027",
+            "price_base": 0.021653333333333337,
+            "price_base_display": "0.022",
             "seconds_average_adjusted": 48,
             "seconds_average_full": 50,
             "seconds_billing_minimum": 60
@@ -980,6 +1092,10 @@
       "samples": {
         "flat-archiviz": {
           "details": {
+            "price_60_sec_min": 0.08635999999999999,
+            "price_60_sec_min_display": "0.086",
+            "price_base": 0.08635999999999999,
+            "price_base_display": "0.086",
             "seconds_average_adjusted": 127,
             "seconds_average_full": 130,
             "seconds_billing_minimum": 127
@@ -1008,6 +1124,10 @@
         },
         "loft": {
           "details": {
+            "price_60_sec_min": 0.22712,
+            "price_60_sec_min_display": "0.227",
+            "price_base": 0.22712,
+            "price_base_display": "0.227",
             "seconds_average_adjusted": 334,
             "seconds_average_full": 334,
             "seconds_billing_minimum": 334
@@ -1036,6 +1156,10 @@
         },
         "lone-monk_cycles_and_exposure-node_demo": {
           "details": {
+            "price_60_sec_min": 0.17611999999999997,
+            "price_60_sec_min_display": "0.176",
+            "price_base": 0.17611999999999997,
+            "price_base_display": "0.176",
             "seconds_average_adjusted": 259,
             "seconds_average_full": 259,
             "seconds_billing_minimum": 259
@@ -1064,6 +1188,10 @@
         },
         "monster_under_the_bed_sss_demo_by_metin_seven": {
           "details": {
+            "price_60_sec_min": 0.040799999999999996,
+            "price_60_sec_min_display": "0.041",
+            "price_base": 0.032639999999999995,
+            "price_base_display": "0.033",
             "seconds_average_adjusted": 48,
             "seconds_average_full": 49,
             "seconds_billing_minimum": 60
@@ -1102,6 +1230,10 @@
       "samples": {
         "flat-archiviz": {
           "details": {
+            "price_60_sec_min": 0.05002055555555555,
+            "price_60_sec_min_display": "0.050",
+            "price_base": 0.05002055555555555,
+            "price_base_display": "0.050",
             "seconds_average_adjusted": 179,
             "seconds_average_full": 180,
             "seconds_billing_minimum": 179
@@ -1130,6 +1262,10 @@
         },
         "loft": {
           "details": {
+            "price_60_sec_min": 0.10367388888888887,
+            "price_60_sec_min_display": "0.104",
+            "price_base": 0.10367388888888887,
+            "price_base_display": "0.104",
             "seconds_average_adjusted": 371,
             "seconds_average_full": 371,
             "seconds_billing_minimum": 371
@@ -1158,6 +1294,10 @@
         },
         "lone-monk_cycles_and_exposure-node_demo": {
           "details": {
+            "price_60_sec_min": 0.07433222222222222,
+            "price_60_sec_min_display": "0.074",
+            "price_base": 0.07433222222222222,
+            "price_base_display": "0.074",
             "seconds_average_adjusted": 266,
             "seconds_average_full": 266,
             "seconds_billing_minimum": 266
@@ -1186,6 +1326,10 @@
         },
         "monster_under_the_bed_sss_demo_by_metin_seven": {
           "details": {
+            "price_60_sec_min": 0.016766666666666666,
+            "price_60_sec_min_display": "0.017",
+            "price_base": 0.013692777777777776,
+            "price_base_display": "0.014",
             "seconds_average_adjusted": 49,
             "seconds_average_full": 49,
             "seconds_billing_minimum": 60
@@ -1224,6 +1368,10 @@
       "samples": {
         "flat-archiviz": {
           "details": {
+            "price_60_sec_min": 0.314,
+            "price_60_sec_min_display": "0.314",
+            "price_base": 0.314,
+            "price_base_display": "0.314",
             "seconds_average_adjusted": 157,
             "seconds_average_full": 160,
             "seconds_billing_minimum": 157
@@ -1252,6 +1400,10 @@
         },
         "loft": {
           "details": {
+            "price_60_sec_min": 0.64,
+            "price_60_sec_min_display": "0.640",
+            "price_base": 0.64,
+            "price_base_display": "0.640",
             "seconds_average_adjusted": 320,
             "seconds_average_full": 321,
             "seconds_billing_minimum": 320
@@ -1280,6 +1432,10 @@
         },
         "lone-monk_cycles_and_exposure-node_demo": {
           "details": {
+            "price_60_sec_min": 0.542,
+            "price_60_sec_min_display": "0.542",
+            "price_base": 0.542,
+            "price_base_display": "0.542",
             "seconds_average_adjusted": 271,
             "seconds_average_full": 271,
             "seconds_billing_minimum": 271
@@ -1308,6 +1464,10 @@
         },
         "monster_under_the_bed_sss_demo_by_metin_seven": {
           "details": {
+            "price_60_sec_min": 0.124,
+            "price_60_sec_min_display": "0.124",
+            "price_base": 0.124,
+            "price_base_display": "0.124",
             "seconds_average_adjusted": 62,
             "seconds_average_full": 64,
             "seconds_billing_minimum": 62

@@ -31,7 +31,7 @@ echo "echo '$ENCODED_04' | base64 -d > /home/ubuntu/setup/steps/04.bash" >> _com
 
 echo 'reboot' >> _combined-install-script.bash 
 
-INSTANCE_TYPE="g4dn.#xlarge"
+INSTANCE_TYPE="g4dn.2xlarge"
 echo "Launching $INSTANCE_TYPE"
 
 aws ec2 run-instances \
@@ -43,7 +43,6 @@ aws ec2 run-instances \
   --key-name "$AWS_KEYPAIR_EXAMPLE" \
   --iam-instance-profile Arn=$AWS_INSTANCE_PROFILE_EXAMPLE \
   --tag-specifications \
-  "ResourceType=instance,Tags=[{Key=Name,Value='Render Test 4ish'}]" \
+  "ResourceType=instance,Tags=[{Key=Name,Value='$INSTANCE_TYPE - Render Test'}]" \
   --block-device-mapping "[ { \"DeviceName\": \"/dev/sda1\", \"Ebs\": { \"VolumeSize\": 200 } } ]"
-
-  # --user-data file://_combined-install-script.bash
+  --user-data file://_combined-install-script.bash
