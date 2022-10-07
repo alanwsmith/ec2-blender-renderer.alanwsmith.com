@@ -31,7 +31,7 @@ echo "echo '$ENCODED_04' | base64 -d > /home/ubuntu/setup/steps/04.bash" >> _com
 
 echo 'reboot' >> _combined-install-script.bash 
 
-INSTANCE_TYPE="g4dn.xlarge"
+INSTANCE_TYPE="g4dn.#xlarge"
 echo "Launching $INSTANCE_TYPE"
 
 aws ec2 run-instances \
