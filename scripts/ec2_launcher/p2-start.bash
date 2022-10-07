@@ -10,20 +10,24 @@ echo "Building user-data script"
 
 cat initial-boot.bash > _combined-install-script.bash
 
-ENCODED_DIRECTOR=`base64 setup-director.bash`
-echo "echo '$ENCODED_DIRECTOR' | base64 -d > /home/ubuntu/setup-director.bash" >> _combined-install-script.bash 
+ENCODED_DIRECTOR=`base64 director.bash`
+echo "echo '$ENCODED_DIRECTOR' | base64 -d > /home/ubuntu/setup/director.bash" >> _combined-install-script.bash 
 
-ENCODED_01=`base64 01-reboot.bash`
-echo "echo '$ENCODED_01' | base64 -d > /home/ubuntu/reboot-setup/01-reboot.bash" >> _combined-install-script.bash 
+ENCODED_01=`base64 p2-setup/01.bash`
+echo "echo '$ENCODED_01' | base64 -d > /home/ubuntu/setup/steps/01.bash" >> _combined-install-script.bash 
 
-ENCODED_02=`base64 02-reboot.bash`
-echo "echo '$ENCODED_02' | base64 -d > /home/ubuntu/reboot-setup/02-reboot.bash" >> _combined-install-script.bash 
+ENCODED_02=`base64 p2-setup/02.bash`
+echo "echo '$ENCODED_02' | base64 -d > /home/ubuntu/setup/steps/02.bash" >> _combined-install-script.bash 
 
-ENCODED_03=`base64 03-reboot.bash`
-echo "echo '$ENCODED_03' | base64 -d > /home/ubuntu/reboot-setup/03-reboot.bash" >> _combined-install-script.bash 
 
-ENCODED_04=`base64 04-reboot.bash`
-echo "echo '$ENCODED_04' | base64 -d > /home/ubuntu/reboot-setup/04-reboot.bash" >> _combined-install-script.bash 
+# ENCODED_02=`base64 02-reboot.bash`
+# echo "echo '$ENCODED_02' | base64 -d > /home/ubuntu/reboot-setup/02-reboot.bash" >> _combined-install-script.bash 
+
+# ENCODED_03=`base64 03-reboot.bash`
+# echo "echo '$ENCODED_03' | base64 -d > /home/ubuntu/reboot-setup/03-reboot.bash" >> _combined-install-script.bash 
+
+# ENCODED_04=`base64 04-reboot.bash`
+# echo "echo '$ENCODED_04' | base64 -d > /home/ubuntu/reboot-setup/04-reboot.bash" >> _combined-install-script.bash 
 
 # ENCODED_05=`base64 05-reboot.bash`
 # echo "echo '$ENCODED_05' | base64 -d > /home/ubuntu/reboot-setup/05-reboot.bash" >> _combined-install-script.bash 

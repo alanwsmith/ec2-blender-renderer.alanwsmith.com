@@ -5,10 +5,17 @@ Note that the cuda setup can
 take severl minutes.
 
 You can log into the box and do
-
 cat ~/setup-log.txt
-
 to see where things are (roughly)
+
+NOTE: The p2 Setup requires it's own script
+so it's in it's own thing (TBD on others)
+Might end up just making a specific install
+for each and dealing with some duplication
+
+
+
+
 
 TODO: Make sure these worked:
 

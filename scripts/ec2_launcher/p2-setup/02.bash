@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LOGFILE="/home/ubuntu/setup-log.txt"
+LOGFILE="/home/ubuntu/setup/log.txt"
 
 echo "$(date) - sudo apt -y update" >> $LOGFILE
 sudo apt -y update
@@ -29,6 +29,4 @@ echo "$(date) - Installing Git Key" >> $LOGFILE
 chmod 400 ~/.ssh/id_ed25519
 eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_ed25519
 echo "github.com,140.82.114.3 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEmKSENjQEezOmxkZMy7opKgwFB9nkt5YRrYMjNuG5N87uRgg6CLrbo5wAdT/y6v0mKV0U2w0WZ2YB/++Tpockg=" > ~/.ssh/known_hosts
-
-
 

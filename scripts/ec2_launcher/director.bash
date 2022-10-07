@@ -1,7 +1,7 @@
 #!/bin/bash
 
-LOG_FILE="/home/ubuntu/setup-log.txt"
-TARGET_DIR="/home/ubuntu/reboot-setup"
+LOG_FILE="/home/ubuntu/setup/log.txt"
+TARGET_DIR="/home/ubuntu/setup/steps"
 ACTIVE_FILE=`ls $TARGET_DIR | sort | head -1`
 
 echo "$(date) - Initializing Setup Director" >> $LOG_FILE
