@@ -39,7 +39,7 @@ echo "Launched EC2 Instance"
 aws ec2 run-instances \
   --user-data file://_combined-install-script.bash \
   --image-id ami-0149b2da6ceec4bb0 \
-  --instance-type g5.24xlarge \
+  --instance-type p2.xlarge \
   --subnet-id "$AWS_PUBLIC_SUBNET_EXAMPLE" \
   --security-group-ids "$AWS_SECURITY_GROUP_EXAMPLE" \
   --associate-public-ip-address \
