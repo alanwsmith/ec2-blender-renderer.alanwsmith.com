@@ -3,7 +3,7 @@
 LOGFILE="/home/ubuntu/setup/log.txt"
 
 INSTANCE_TYPE=`curl -q http://169.254.169.254/latest/meta-data/instance-type`
-echo $INSTANCE_TYPE >> $INSTANCE_TYPE
+echo $INSTANCE_TYPE >> "/home/ubuntu/$INSTANCE_TYPE"
 
 echo "$(date) - Running: apt -y update" >> $LOGFILE
 sudo apt -y update
