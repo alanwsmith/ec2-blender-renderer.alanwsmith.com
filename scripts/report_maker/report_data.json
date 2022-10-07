@@ -392,6 +392,144 @@
         }
       }
     },
+    "g4dn.xlarge": {
+      "costs": {
+        "cost_per_hour": 0.526,
+        "cost_per_hour_display": "0.526",
+        "cost_per_second": 0.00014611111111111113,
+        "cost_per_second_display": "0.000146"
+      },
+      "samples": {
+        "flat-archiviz": {
+          "details": {
+            "price_60_sec_min": 0.044125555555555564,
+            "price_60_sec_min_display": "0.044",
+            "price_base": 0.044125555555555564,
+            "price_base_display": "0.044",
+            "seconds_average_adjusted": 302,
+            "seconds_average_full": 305,
+            "seconds_billing_minimum": 302
+          },
+          "machine_details": {
+            "filename_key": "g4dn.xlarge",
+            "type": "aws"
+          },
+          "test_runs": [
+            {
+              "end_time": "2022-10-07 21:01:20.163644",
+              "start_time": "2022-10-07 20:56:07.708182",
+              "time_delta": "0:05:12.455462"
+            },
+            {
+              "end_time": "2022-10-07 21:06:23.199859",
+              "start_time": "2022-10-07 21:01:20.164147",
+              "time_delta": "0:05:03.035712"
+            },
+            {
+              "end_time": "2022-10-07 21:11:25.907875",
+              "start_time": "2022-10-07 21:06:23.200368",
+              "time_delta": "0:05:02.707507"
+            }
+          ]
+        },
+        "loft": {
+          "details": {
+            "price_60_sec_min": 0.12098000000000002,
+            "price_60_sec_min_display": "0.121",
+            "price_base": 0.12098000000000002,
+            "price_base_display": "0.121",
+            "seconds_average_adjusted": 828,
+            "seconds_average_full": 829,
+            "seconds_billing_minimum": 828
+          },
+          "machine_details": {
+            "filename_key": "g4dn.xlarge",
+            "type": "aws"
+          },
+          "test_runs": [
+            {
+              "end_time": "2022-10-07 21:59:33.471867",
+              "start_time": "2022-10-07 21:45:42.180683",
+              "time_delta": "0:13:51.291184"
+            },
+            {
+              "end_time": "2022-10-07 22:13:22.138858",
+              "start_time": "2022-10-07 21:59:33.472315",
+              "time_delta": "0:13:48.666543"
+            },
+            {
+              "end_time": "2022-10-07 22:27:11.271152",
+              "start_time": "2022-10-07 22:13:22.139334",
+              "time_delta": "0:13:49.131818"
+            }
+          ]
+        },
+        "lone-monk_cycles_and_exposure-node_demo": {
+          "details": {
+            "price_60_sec_min": 0.09994000000000001,
+            "price_60_sec_min_display": "0.100",
+            "price_base": 0.09994000000000001,
+            "price_base_display": "0.100",
+            "seconds_average_adjusted": 684,
+            "seconds_average_full": 685,
+            "seconds_billing_minimum": 684
+          },
+          "machine_details": {
+            "filename_key": "g4dn.xlarge",
+            "type": "aws"
+          },
+          "test_runs": [
+            {
+              "end_time": "2022-10-07 21:22:51.248746",
+              "start_time": "2022-10-07 21:11:25.908609",
+              "time_delta": "0:11:25.340137"
+            },
+            {
+              "end_time": "2022-10-07 21:34:17.340277",
+              "start_time": "2022-10-07 21:22:51.249198",
+              "time_delta": "0:11:26.091079"
+            },
+            {
+              "end_time": "2022-10-07 21:45:42.179983",
+              "start_time": "2022-10-07 21:34:17.340791",
+              "time_delta": "0:11:24.839192"
+            }
+          ]
+        },
+        "monster_under_the_bed_sss_demo_by_metin_seven": {
+          "details": {
+            "price_60_sec_min": 0.016948888888888892,
+            "price_60_sec_min_display": "0.017",
+            "price_base": 0.016948888888888892,
+            "price_base_display": "0.017",
+            "seconds_average_adjusted": 116,
+            "seconds_average_full": 117,
+            "seconds_billing_minimum": 116
+          },
+          "machine_details": {
+            "filename_key": "g4dn.xlarge",
+            "type": "aws"
+          },
+          "test_runs": [
+            {
+              "end_time": "2022-10-07 20:52:14.010282",
+              "start_time": "2022-10-07 20:50:15.026411",
+              "time_delta": "0:01:58.983871"
+            },
+            {
+              "end_time": "2022-10-07 20:54:10.367037",
+              "start_time": "2022-10-07 20:52:14.010977",
+              "time_delta": "0:01:56.356060"
+            },
+            {
+              "end_time": "2022-10-07 20:56:07.707407",
+              "start_time": "2022-10-07 20:54:10.367581",
+              "time_delta": "0:01:57.339826"
+            }
+          ]
+        }
+      }
+    },
     "g5.12xlarge": {
       "costs": {
         "cost_per_hour": 5.672,
