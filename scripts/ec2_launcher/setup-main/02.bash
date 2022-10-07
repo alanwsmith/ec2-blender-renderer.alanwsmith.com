@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LOGFILE="/home/ubuntu/setup-log.txt"
+LOGFILE="/home/ubuntu/setup/log.txt"
 
 echo "$(date) - sudo apt -y update" >> $LOGFILE
 sudo apt -y update
