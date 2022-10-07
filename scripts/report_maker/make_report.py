@@ -66,21 +66,28 @@ def load_raw_pricing_data():
                     "cost_per_hour_display": "{:.3f}".format(cost)
                 }
 
-# def calculate_seconds():
-#     for machinein machines['details'].keys():
-#         machine_data = machines['details'][key_name]['data']
-#         for sample in samples:
-#             sample_time_list = []
+def calculate_seconds():
+    for machine_name in report['machines'].keys():
+        for sample_name in report['machines'][machine_name]['samples'].keys():
+            sample = report['machines'][machine_name]['samples'][sample_name]
+            sample['details'] = {}
+            sample_time_list = []
+            for test_run in sample['test_runs']:
+                start_time = datetime.fromisoformat(test_run['start_time'])
+                end_time = datetime.fromisoformat(test_run['end_time'])
+                delta = end_time - start_time
+                sample_time_list.append(int(delta.total_seconds()))
+                sample['details']['seconds_average_full'] = int(sum(sample_time_list) / len(sample_time_list))
+                # print(f"{machine_name} - {sample_name} - {sample['times']['average_full']}")
+                # print(sample_time_list)
+                # Drop the highest time to adjust for possible issues
+                # as sanity check
 
-            # for test_run in machine_data[sample]['test_runs']:
-            #     start_time = datetime.fromisoformat(test_run['start_time'])
-            #     end_time = datetime.fromisoformat(test_run['end_time'])
-            #     delta = end_time - start_time
-            #     sample_time_list.append(int(delta.total_seconds()))
-            # sample_time_list.sort()
-            # sample_time_list.pop()
-            # machine_data[sample] = int(sum(sample_time_list) / len(sample_time_list))
-            # # print(sample_time_list)
+            sample_time_list.sort()
+                # if len(sample_time_list) > 1:
+            sample_time_list.pop()
+            sample['details']['seconds_average_adjusted'] = int(sum(sample_time_list) / len(sample_time_list))
+            sample['details']['seconds_billing_minimum'] = max(sample['details']['seconds_average_adjusted'], 60)
 
 
 
@@ -90,7 +97,7 @@ def output_report():
 
 if __name__ == '__main__':
     load_raw_test_data()
-    # calculate_seconds()
+    calculate_seconds()
     #load_pricing_data()
     output_report()
 

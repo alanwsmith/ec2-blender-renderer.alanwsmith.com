@@ -3,6 +3,11 @@
     "MacBookPro18.4": {
       "samples": {
         "flat-archiviz": {
+          "details": {
+            "seconds_average_adjusted": 284,
+            "seconds_average_full": 284,
+            "seconds_billing_minimum": 284
+          },
           "machine_details": {
             "filename_key": "MacBookPro18.4",
             "type": "mac"
@@ -26,6 +31,11 @@
           ]
         },
         "loft": {
+          "details": {
+            "seconds_average_adjusted": 1136,
+            "seconds_average_full": 1143,
+            "seconds_billing_minimum": 1136
+          },
           "machine_details": {
             "filename_key": "MacBookPro18.4",
             "type": "mac"
@@ -49,6 +59,11 @@
           ]
         },
         "lone-monk_cycles_and_exposure-node_demo": {
+          "details": {
+            "seconds_average_adjusted": 916,
+            "seconds_average_full": 928,
+            "seconds_billing_minimum": 916
+          },
           "machine_details": {
             "filename_key": "MacBookPro18.4",
             "type": "mac"
@@ -72,6 +87,11 @@
           ]
         },
         "monster_under_the_bed_sss_demo_by_metin_seven": {
+          "details": {
+            "seconds_average_adjusted": 170,
+            "seconds_average_full": 170,
+            "seconds_billing_minimum": 170
+          },
           "machine_details": {
             "filename_key": "MacBookPro18.4",
             "type": "mac"
@@ -99,6 +119,11 @@
     "g3.4xlarge": {
       "samples": {
         "flat-archiviz": {
+          "details": {
+            "seconds_average_adjusted": 557,
+            "seconds_average_full": 559,
+            "seconds_billing_minimum": 557
+          },
           "machine_details": {
             "filename_key": "g3.4xlarge",
             "type": "aws"
@@ -122,6 +147,11 @@
           ]
         },
         "loft": {
+          "details": {
+            "seconds_average_adjusted": 2343,
+            "seconds_average_full": 2343,
+            "seconds_billing_minimum": 2343
+          },
           "machine_details": {
             "filename_key": "g3.4xlarge",
             "type": "aws"
@@ -145,6 +175,11 @@
           ]
         },
         "lone-monk_cycles_and_exposure-node_demo": {
+          "details": {
+            "seconds_average_adjusted": 1620,
+            "seconds_average_full": 1620,
+            "seconds_billing_minimum": 1620
+          },
           "machine_details": {
             "filename_key": "g3.4xlarge",
             "type": "aws"
@@ -168,6 +203,11 @@
           ]
         },
         "monster_under_the_bed_sss_demo_by_metin_seven": {
+          "details": {
+            "seconds_average_adjusted": 336,
+            "seconds_average_full": 336,
+            "seconds_billing_minimum": 336
+          },
           "machine_details": {
             "filename_key": "g3.4xlarge",
             "type": "aws"
@@ -195,6 +235,11 @@
     "g3.8xlarge": {
       "samples": {
         "flat-archiviz": {
+          "details": {
+            "seconds_average_adjusted": 322,
+            "seconds_average_full": 325,
+            "seconds_billing_minimum": 322
+          },
           "machine_details": {
             "filename_key": "g3.8xlarge",
             "type": "aws"
@@ -218,6 +263,11 @@
           ]
         },
         "loft": {
+          "details": {
+            "seconds_average_adjusted": 1251,
+            "seconds_average_full": 1253,
+            "seconds_billing_minimum": 1251
+          },
           "machine_details": {
             "filename_key": "g3.8xlarge",
             "type": "aws"
@@ -241,6 +291,11 @@
           ]
         },
         "lone-monk_cycles_and_exposure-node_demo": {
+          "details": {
+            "seconds_average_adjusted": 829,
+            "seconds_average_full": 831,
+            "seconds_billing_minimum": 829
+          },
           "machine_details": {
             "filename_key": "g3.8xlarge",
             "type": "aws"
@@ -264,6 +319,11 @@
           ]
         },
         "monster_under_the_bed_sss_demo_by_metin_seven": {
+          "details": {
+            "seconds_average_adjusted": 176,
+            "seconds_average_full": 178,
+            "seconds_billing_minimum": 176
+          },
           "machine_details": {
             "filename_key": "g3.8xlarge",
             "type": "aws"
@@ -291,6 +351,11 @@
     "g5.12xlarge": {
       "samples": {
         "flat-archiviz": {
+          "details": {
+            "seconds_average_adjusted": 75,
+            "seconds_average_full": 77,
+            "seconds_billing_minimum": 75
+          },
           "machine_details": {
             "filename_key": "g5.12xlarge",
             "type": "aws"
@@ -314,6 +379,11 @@
           ]
         },
         "loft": {
+          "details": {
+            "seconds_average_adjusted": 119,
+            "seconds_average_full": 119,
+            "seconds_billing_minimum": 119
+          },
           "machine_details": {
             "filename_key": "g5.12xlarge",
             "type": "aws"
@@ -337,6 +407,11 @@
           ]
         },
         "lone-monk_cycles_and_exposure-node_demo": {
+          "details": {
+            "seconds_average_adjusted": 75,
+            "seconds_average_full": 75,
+            "seconds_billing_minimum": 75
+          },
           "machine_details": {
             "filename_key": "g5.12xlarge",
             "type": "aws"
@@ -360,6 +435,11 @@
           ]
         },
         "monster_under_the_bed_sss_demo_by_metin_seven": {
+          "details": {
+            "seconds_average_adjusted": 18,
+            "seconds_average_full": 19,
+            "seconds_billing_minimum": 60
+          },
           "machine_details": {
             "filename_key": "g5.12xlarge",
             "type": "aws"
@@ -387,6 +467,11 @@
     "g5.16xlarge": {
       "samples": {
         "flat-archiviz": {
+          "details": {
+            "seconds_average_adjusted": 124,
+            "seconds_average_full": 126,
+            "seconds_billing_minimum": 124
+          },
           "machine_details": {
             "filename_key": "g5.16xlarge",
             "type": "aws"
@@ -410,6 +495,11 @@
           ]
         },
         "loft": {
+          "details": {
+            "seconds_average_adjusted": 332,
+            "seconds_average_full": 332,
+            "seconds_billing_minimum": 332
+          },
           "machine_details": {
             "filename_key": "g5.16xlarge",
             "type": "aws"
@@ -433,6 +523,11 @@
           ]
         },
         "lone-monk_cycles_and_exposure-node_demo": {
+          "details": {
+            "seconds_average_adjusted": 258,
+            "seconds_average_full": 258,
+            "seconds_billing_minimum": 258
+          },
           "machine_details": {
             "filename_key": "g5.16xlarge",
             "type": "aws"
@@ -456,6 +551,11 @@
           ]
         },
         "monster_under_the_bed_sss_demo_by_metin_seven": {
+          "details": {
+            "seconds_average_adjusted": 48,
+            "seconds_average_full": 49,
+            "seconds_billing_minimum": 60
+          },
           "machine_details": {
             "filename_key": "g5.16xlarge",
             "type": "aws"
@@ -483,6 +583,11 @@
     "g5.24xlarge": {
       "samples": {
         "flat-archiviz": {
+          "details": {
+            "seconds_average_adjusted": 74,
+            "seconds_average_full": 76,
+            "seconds_billing_minimum": 74
+          },
           "machine_details": {
             "filename_key": "g5.24xlarge",
             "type": "aws"
@@ -506,6 +611,11 @@
           ]
         },
         "loft": {
+          "details": {
+            "seconds_average_adjusted": 118,
+            "seconds_average_full": 118,
+            "seconds_billing_minimum": 118
+          },
           "machine_details": {
             "filename_key": "g5.24xlarge",
             "type": "aws"
@@ -529,6 +639,11 @@
           ]
         },
         "lone-monk_cycles_and_exposure-node_demo": {
+          "details": {
+            "seconds_average_adjusted": 75,
+            "seconds_average_full": 75,
+            "seconds_billing_minimum": 75
+          },
           "machine_details": {
             "filename_key": "g5.24xlarge",
             "type": "aws"
@@ -552,6 +667,11 @@
           ]
         },
         "monster_under_the_bed_sss_demo_by_metin_seven": {
+          "details": {
+            "seconds_average_adjusted": 18,
+            "seconds_average_full": 19,
+            "seconds_billing_minimum": 60
+          },
           "machine_details": {
             "filename_key": "g5.24xlarge",
             "type": "aws"
@@ -579,6 +699,11 @@
     "g5.2xlarge": {
       "samples": {
         "flat-archiviz": {
+          "details": {
+            "seconds_average_adjusted": 150,
+            "seconds_average_full": 153,
+            "seconds_billing_minimum": 150
+          },
           "machine_details": {
             "filename_key": "g5.2xlarge",
             "type": "aws"
@@ -602,6 +727,11 @@
           ]
         },
         "loft": {
+          "details": {
+            "seconds_average_adjusted": 347,
+            "seconds_average_full": 348,
+            "seconds_billing_minimum": 347
+          },
           "machine_details": {
             "filename_key": "g5.2xlarge",
             "type": "aws"
@@ -625,6 +755,11 @@
           ]
         },
         "lone-monk_cycles_and_exposure-node_demo": {
+          "details": {
+            "seconds_average_adjusted": 261,
+            "seconds_average_full": 261,
+            "seconds_billing_minimum": 261
+          },
           "machine_details": {
             "filename_key": "g5.2xlarge",
             "type": "aws"
@@ -648,6 +783,11 @@
           ]
         },
         "monster_under_the_bed_sss_demo_by_metin_seven": {
+          "details": {
+            "seconds_average_adjusted": 48,
+            "seconds_average_full": 49,
+            "seconds_billing_minimum": 60
+          },
           "machine_details": {
             "filename_key": "g5.2xlarge",
             "type": "aws"
@@ -675,6 +815,11 @@
     "g5.4xlarge": {
       "samples": {
         "flat-archiviz": {
+          "details": {
+            "seconds_average_adjusted": 135,
+            "seconds_average_full": 135,
+            "seconds_billing_minimum": 135
+          },
           "machine_details": {
             "filename_key": "g5.4xlarge",
             "type": "aws"
@@ -698,6 +843,11 @@
           ]
         },
         "loft": {
+          "details": {
+            "seconds_average_adjusted": 338,
+            "seconds_average_full": 338,
+            "seconds_billing_minimum": 338
+          },
           "machine_details": {
             "filename_key": "g5.4xlarge",
             "type": "aws"
@@ -721,6 +871,11 @@
           ]
         },
         "lone-monk_cycles_and_exposure-node_demo": {
+          "details": {
+            "seconds_average_adjusted": 260,
+            "seconds_average_full": 260,
+            "seconds_billing_minimum": 260
+          },
           "machine_details": {
             "filename_key": "g5.4xlarge",
             "type": "aws"
@@ -744,6 +899,11 @@
           ]
         },
         "monster_under_the_bed_sss_demo_by_metin_seven": {
+          "details": {
+            "seconds_average_adjusted": 48,
+            "seconds_average_full": 50,
+            "seconds_billing_minimum": 60
+          },
           "machine_details": {
             "filename_key": "g5.4xlarge",
             "type": "aws"
@@ -771,6 +931,11 @@
     "g5.8xlarge": {
       "samples": {
         "flat-archiviz": {
+          "details": {
+            "seconds_average_adjusted": 127,
+            "seconds_average_full": 130,
+            "seconds_billing_minimum": 127
+          },
           "machine_details": {
             "filename_key": "g5.8xlarge",
             "type": "aws"
@@ -794,6 +959,11 @@
           ]
         },
         "loft": {
+          "details": {
+            "seconds_average_adjusted": 334,
+            "seconds_average_full": 334,
+            "seconds_billing_minimum": 334
+          },
           "machine_details": {
             "filename_key": "g5.8xlarge",
             "type": "aws"
@@ -817,6 +987,11 @@
           ]
         },
         "lone-monk_cycles_and_exposure-node_demo": {
+          "details": {
+            "seconds_average_adjusted": 259,
+            "seconds_average_full": 259,
+            "seconds_billing_minimum": 259
+          },
           "machine_details": {
             "filename_key": "g5.8xlarge",
             "type": "aws"
@@ -840,6 +1015,11 @@
           ]
         },
         "monster_under_the_bed_sss_demo_by_metin_seven": {
+          "details": {
+            "seconds_average_adjusted": 48,
+            "seconds_average_full": 49,
+            "seconds_billing_minimum": 60
+          },
           "machine_details": {
             "filename_key": "g5.8xlarge",
             "type": "aws"
@@ -867,6 +1047,11 @@
     "g5.xlarge": {
       "samples": {
         "flat-archiviz": {
+          "details": {
+            "seconds_average_adjusted": 179,
+            "seconds_average_full": 180,
+            "seconds_billing_minimum": 179
+          },
           "machine_details": {
             "filename_key": "g5.xlarge",
             "type": "aws"
@@ -890,6 +1075,11 @@
           ]
         },
         "loft": {
+          "details": {
+            "seconds_average_adjusted": 371,
+            "seconds_average_full": 371,
+            "seconds_billing_minimum": 371
+          },
           "machine_details": {
             "filename_key": "g5.xlarge",
             "type": "aws"
@@ -913,6 +1103,11 @@
           ]
         },
         "lone-monk_cycles_and_exposure-node_demo": {
+          "details": {
+            "seconds_average_adjusted": 266,
+            "seconds_average_full": 266,
+            "seconds_billing_minimum": 266
+          },
           "machine_details": {
             "filename_key": "g5.xlarge",
             "type": "aws"
@@ -936,6 +1131,11 @@
           ]
         },
         "monster_under_the_bed_sss_demo_by_metin_seven": {
+          "details": {
+            "seconds_average_adjusted": 49,
+            "seconds_average_full": 49,
+            "seconds_billing_minimum": 60
+          },
           "machine_details": {
             "filename_key": "g5.xlarge",
             "type": "aws"
@@ -963,6 +1163,11 @@
     "p2.8xlarge": {
       "samples": {
         "flat-archiviz": {
+          "details": {
+            "seconds_average_adjusted": 157,
+            "seconds_average_full": 160,
+            "seconds_billing_minimum": 157
+          },
           "machine_details": {
             "filename_key": "p2.8xlarge",
             "type": "aws"
@@ -986,6 +1191,11 @@
           ]
         },
         "loft": {
+          "details": {
+            "seconds_average_adjusted": 320,
+            "seconds_average_full": 321,
+            "seconds_billing_minimum": 320
+          },
           "machine_details": {
             "filename_key": "p2.8xlarge",
             "type": "aws"
@@ -1009,6 +1219,11 @@
           ]
         },
         "lone-monk_cycles_and_exposure-node_demo": {
+          "details": {
+            "seconds_average_adjusted": 271,
+            "seconds_average_full": 271,
+            "seconds_billing_minimum": 271
+          },
           "machine_details": {
             "filename_key": "p2.8xlarge",
             "type": "aws"
@@ -1032,6 +1247,11 @@
           ]
         },
         "monster_under_the_bed_sss_demo_by_metin_seven": {
+          "details": {
+            "seconds_average_adjusted": 62,
+            "seconds_average_full": 64,
+            "seconds_billing_minimum": 62
+          },
           "machine_details": {
             "filename_key": "p2.8xlarge",
             "type": "aws"
