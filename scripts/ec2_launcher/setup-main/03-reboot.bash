@@ -2,6 +2,17 @@
 
 LOGFILE="/home/ubuntu/setup-log.txt"
 
+echo "$(date) - Installing CUDA KEYRING" >> $LOGFILE
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-keyring_1.0-1_all.deb
+sudo dpkg -i cuda-keyring_1.0-1_all.deb
+sudo apt-key del 7fa2af80
+sudo apt -y update
+
+# Seeing if this install's the necessary drivers too
+echo "$(date) - Installing CUDA" >> $LOGFILE
+sudo apt -y install cuda
+
+rm cuda-keyring_1.0-1_all.deb
 
 # echo "$(date) - Installing NVIDIA Drivers" >> $LOGFILE
 # echo "sudo apt -y install nvidia-headless-515-server" >> $LOGFILE
@@ -19,9 +30,9 @@ LOGFILE="/home/ubuntu/setup-log.txt"
 # Dropping it for now to see if just installing cuda works
 # sudo apt -y install nvidia-headless-515-server
 
-# this is a test for the p2 tests
-sudo apt -y install nvidia-dkms-470
-sudo apt -y install nvidia-headless-470
+# # this is a test for the p2 tests
+# sudo apt -y install nvidia-dkms-470
+# sudo apt -y install nvidia-headless-470
 
 #
 

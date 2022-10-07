@@ -35,7 +35,7 @@ echo 'reboot' >> _combined-install-script.bash
 
 echo "Launched EC2 Instance"
 
-INSTANCE_TYPE="p2.xlarge"
+INSTANCE_TYPE="p2.16xlarge"
 
 aws ec2 run-instances \
   --user-data file://_combined-install-script.bash \
@@ -48,4 +48,4 @@ aws ec2 run-instances \
   --iam-instance-profile Arn=$AWS_INSTANCE_PROFILE_EXAMPLE \
   --tag-specifications \
   "ResourceType=instance,Tags=[{Key=Name,Value='$INSTANCE_TYPE - Render Test'}]" \
-  --block-device-mapping "[ { \"DeviceName\": \"/dev/sda1\", \"Ebs\": { \"VolumeSize\": 200 } } ]"
+  --block-device-mapping "[ { \"DeviceName\": \"/dev/sda1\", \"Ebs\": { \"VolumeSize\": 200 } } ]" 
