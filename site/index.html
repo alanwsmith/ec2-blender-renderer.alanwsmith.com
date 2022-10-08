@@ -12,6 +12,27 @@
   </head>
   <body>
     <canvas id="barChartCanvas"></canvas>
+
+    <h3>Notes</h3>
+    <ul>
+      <li>
+        You have to request quota updates to get access to the 'p' and 'g' type
+        instances. As of press time, this is
+        <a
+          href="https://us-east-1.console.aws.amazon.com/servicequotas/home/services/ec2/quotas"
+          >the page to request quota increases</a
+        >. Search for 'demand'. Then put in requests for 'Running On-Demand G
+        and VT instances' and 'Running On-Demand P instances'. The biggest
+        machine 'p' instance is 96 vCPU and the biggest 'g' is 192. They didn't
+        give me the 192 max on the 'g' instances the first time I asked.
+      </li>
+
+      <li>
+        The p4d.24xlarge was not available in `us-east-1a` when i tested. (TODO
+        confirm if you did `1b`, `1c`, or `1d` based off the error message
+      </li>
+    </ul>
+
     <script>
       Chart.register(ChartDataLabels)
       const barChart = new Chart(document.getElementById('barChartCanvas'), {
