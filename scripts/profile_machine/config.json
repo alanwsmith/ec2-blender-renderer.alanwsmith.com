@@ -1,5 +1,5 @@
 {
-	"profiler_directory": "~/blender_profiler",
+	"profiler_directory": "/home/ubuntu/blender_profiler",
 	"test_files_single": [
 		{
 			"url": "https://download.blender.org/demo/cycles/monster_under_the_bed_sss_demo_by_metin_seven.blend",
