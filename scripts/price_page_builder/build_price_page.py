@@ -17,22 +17,78 @@ with open('../report_maker/report_data.json') as _report_data:
         else:
             machine['price'] = 'n/a'
         
-        machine['seconds_average_adjusted'] = report_data['machines'][machine_name]['samples']['loft']['details']['seconds_average_adjusted']
+        machine['seconds'] = report_data['machines'][machine_name]['samples']['loft']['details']['seconds_average_adjusted']
+
+        # Add price here so it can be split out later since
+        # that's the only way I've figured out how to do 
+        # multilines
+        machine['id'] = f"{machine['name']}~{machine['price']}"
+
+        machine['label'] = f"{int(machine['seconds'] / 60)}m{machine['seconds'] % 60}s"
+        machine['bottom_label'] = [machine['name'], machine['price']]
+
         machines_v2.append(machine)
 
-    machines_v2.sort(key=lambda x: (x['seconds_average_adjusted'], x['price']))
+    machines_v2.sort(key=lambda x: (x['seconds'], x['price']))
     print(machines_v2)
 
-    labels = [f"['{item['name']}', '{item['price']}']" for item in machines_v2]
-    times = [f"'{item['seconds_average_adjusted']}'" for item in machines_v2]
+    # labels = [f"['{item['name']}', '{item['price']}']" for item in machines_v2]
+    # times = [f"'{item['seconds_average_adjusted']}'" for item in machines_v2]
+
+
+    data_object = {
+        'type': 'bar',
+        'data': {
+            'datasets': [
+                {
+                    'data': machines_v2,
+                    'backgroundColor': ['#256D85', '#628E90'],
+                    'datalabels': {
+                        'anchor': 'end',
+                        'color': '#fff',
+                        'align': 'top',
+                    },
+                },
+
+            ],
+            # 'labels': [m['bottom_label'] for m in machines_v2]
+        },
+        'options': {
+            'plugins': { 'legend': { 'display': False } },
+            'parsing': {
+                'xAxisKey': ['id', 'price'],
+                'yAxisKey': 'seconds',
+            },
+            'layout': {
+                'padding': {
+                    'top': 50
+                }
+            },
+
+        },
+    }
+
+    data_object = {
+        'datasets': [
+            {
+                'data': machines_v2,
+                 'backgroundColor': ['#256D85', '#628E90'],
+                 'datalabels': {
+                     'anchor': 'end',
+                     'color': '#fff',
+                     'align': 'top',
+                 },
+             },
+        ],
+    }
+
 
     with open('template.html') as _tmpl:
         skeleton = Template(_tmpl.read())
         with open('../../site/index.html', 'w') as _html_out:
             _html_out.write(
                 skeleton.substitute(
-                    LABELS=", ".join(labels),
-                    TIMES=", ".join(times)
+                    DATA_OBJECT=json.dumps(data_object, sort_keys=True, indent=2, default=str),
                 )
             )
 
