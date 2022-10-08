@@ -11,10 +11,10 @@
     </style>
   </head>
   <body>
-    <canvas id="myChart"></canvas>
+    <canvas id="barChartCanvas"></canvas>
     <script>
       Chart.register(ChartDataLabels)
-      const myChart = new Chart(document.getElementById('myChart'), {
+      const barChart = new Chart(document.getElementById('barChartCanvas'), {
         type: 'bar',
         options: {
           layout: {
@@ -149,7 +149,7 @@
           "seconds": 828
         },
         {
-          "id": "MBP~$n/a",
+          "id": "MBP~n/a",
           "label": "18m56s",
           "name": "MBP",
           "price": "n/a",
@@ -186,6 +186,16 @@
   ]
 },
       })
+
+      const sourceColors = barChart.data.datasets[0].backgroundColor
+      const colorArray = []
+      for (let i = 0; i < barChart.data.datasets[0].data.length; i++) {
+        console.log(i)
+        colorArray[i] = sourceColors[i % sourceColors.length]
+      }
+      barChart.data.datasets[0].backgroundColor = colorArray
+      barChart.data.datasets[0].backgroundColor[14] = 'blue'
+      barChart.update()
     </script>
   </body>
 </html>

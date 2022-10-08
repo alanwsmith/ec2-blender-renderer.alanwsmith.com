@@ -22,7 +22,11 @@ with open('../report_maker/report_data.json') as _report_data:
         # Add price here so it can be split out later since
         # that's the only way I've figured out how to do 
         # multilines
-        machine['id'] = f"{machine['name']}~${machine['price']}"
+        if machine['price'] == 'n/a':
+            machine['id'] = f"{machine['name']}~{machine['price']}"
+        else:
+            machine['id'] = f"{machine['name']}~${machine['price']}"
+
         machine['label'] = f"{int(machine['seconds'] / 60)}m{machine['seconds'] % 60}s"
         machines_v2.append(machine)
 
