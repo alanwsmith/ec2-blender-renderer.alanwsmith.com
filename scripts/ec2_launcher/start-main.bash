@@ -1,6 +1,6 @@
 #!/bin/bash
 
-INSTANCE_TYPE="g3s.xlarge"
+INSTANCE_TYPE="g3.16xlarge"
 echo "Prepping Launch For: $INSTANCE_TYPE"
 echo "--subnet-id $AWS_PUBLIC_SUBNET_EXAMPLE"
 echo "--security-group-ids $AWS_SECURITY_GROUP_EXAMPLE"
