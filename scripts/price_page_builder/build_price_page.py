@@ -32,10 +32,6 @@ with open('../report_maker/report_data.json') as _report_data:
     machines_v2.sort(key=lambda x: (x['seconds'], x['price']))
     print(machines_v2)
 
-    # labels = [f"['{item['name']}', '{item['price']}']" for item in machines_v2]
-    # times = [f"'{item['seconds_average_adjusted']}'" for item in machines_v2]
-
-
     data_object = {
         'type': 'bar',
         'data': {
@@ -51,7 +47,6 @@ with open('../report_maker/report_data.json') as _report_data:
                 },
 
             ],
-            # 'labels': [m['bottom_label'] for m in machines_v2]
         },
         'options': {
             'plugins': { 'legend': { 'display': False } },
@@ -81,7 +76,6 @@ with open('../report_maker/report_data.json') as _report_data:
              },
         ],
     }
-
 
     with open('template.html') as _tmpl:
         skeleton = Template(_tmpl.read())
