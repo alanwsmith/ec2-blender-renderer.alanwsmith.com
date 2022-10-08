@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# echo "Value check: "
-# echo "--subnet-id $AWS_PUBLIC_SUBNET_EXAMPLE"
-# echo "--security-group-ids $AWS_SECURITY_GROUP_EXAMPLE"
-# echo "--key-name $AWS_KEYPAIR_EXAMPLE"
-# echo "--iam-instance-profile Arn=$AWS_INSTANCE_PROFILE_EXAMPLE"
-
+INSTANCE_TYPE="g3s.xlarge"
+echo "Prepping Launch For: $INSTANCE_TYPE"
+echo "--subnet-id $AWS_PUBLIC_SUBNET_EXAMPLE"
+echo "--security-group-ids $AWS_SECURITY_GROUP_EXAMPLE"
+echo "--key-name $AWS_KEYPAIR_EXAMPLE"
+echo "--iam-instance-profile Arn=$AWS_INSTANCE_PROFILE_EXAMPLE"
 echo "Building user-data script"
 
 cat initial-boot.bash > _combined-install-script.bash
@@ -25,14 +25,12 @@ echo "echo '$ENCODED_03' | base64 -d > /home/ubuntu/setup/steps/03.bash" >> _com
 ENCODED_04=`base64 setup-main/04.bash`
 echo "echo '$ENCODED_04' | base64 -d > /home/ubuntu/setup/steps/04.bash" >> _combined-install-script.bash 
 
-# ENCODED_05=`base64 setup-main/05.bash`
-# echo "echo '$ENCODED_05' | base64 -d > /home/ubuntu/setup/steps/05.bash" >> _combined-install-script.bash 
-
+ENCODED_05=`base64 setup-main/05.bash`
+echo "echo '$ENCODED_05' | base64 -d > /home/ubuntu/setup/steps/05.bash" >> _combined-install-script.bash 
 
 echo 'reboot' >> _combined-install-script.bash 
 
-INSTANCE_TYPE="g4dn.12xlarge"
-echo "Launching $INSTANCE_TYPE"
+echo "Launching: $INSTANCE_TYPE"
 
 aws ec2 run-instances \
   --image-id ami-0149b2da6ceec4bb0 \

@@ -24,7 +24,7 @@ then
 else
   ACTIVE_FILE_PATH="$TARGET_DIR/$ACTIVE_FILE"
   echo "$(date) - Running: ${ACTIVE_FILE_PATH}" >> $LOG_FILE
-  /bin/bash $ACTIVE_FILE_PATH
+  /bin/bash -l $ACTIVE_FILE_PATH
   echo "$(date) - Deleting: ${ACTIVE_FILE_PATH}" >> $LOG_FILE
   rm $ACTIVE_FILE_PATH
   echo "$(date) - Rebooting from setup-director" >> $LOG_FILE
