@@ -35,36 +35,34 @@ with open('../report_maker/report_data.json') as _report_data:
     machines_v2.sort(key=lambda x: (x['seconds'], x['price']))
     print(machines_v2)
 
-    data_object = {
-        'type': 'bar',
-        'data': {
-            'datasets': [
-                {
-                    'data': machines_v2,
-                    'backgroundColor': ['#256D85', '#628E90'],
-                    'datalabels': {
-                        'anchor': 'end',
-                        'color': '#fff',
-                        'align': 'top',
-                    },
-                },
-
-            ],
-        },
-        'options': {
-            'plugins': { 'legend': { 'display': False } },
-            'parsing': {
-                'xAxisKey': ['id', 'price'],
-                'yAxisKey': 'seconds',
-            },
-            'layout': {
-                'padding': {
-                    'top': 50
-                }
-            },
-
-        },
-    }
+    # data_object = {
+    #     'type': 'bar',
+    #     'data': {
+    #         'datasets': [
+    #             {
+    #                 'data': machines_v2,
+    #                 'backgroundColor': ['#256D85', '#628E90'],
+    #                 'datalabels': {
+    #                     'anchor': 'end',
+    #                     'color': '#444',
+    #                     'align': 'top',
+    #                 },
+    #             },
+    #         ],
+    #     },
+    #     'options': {
+    #         'plugins': { 'legend': { 'display': False } },
+    #         'parsing': {
+    #             'xAxisKey': ['id', 'price'],
+    #             'yAxisKey': 'seconds',
+    #         },
+    #         'layout': {
+    #             'padding': {
+    #                 'top': 50
+    #             }
+    #         },
+    #     },
+    # }
 
     data_object = {
         'datasets': [
@@ -73,7 +71,7 @@ with open('../report_maker/report_data.json') as _report_data:
                  'backgroundColor': ['#256D85', '#628E90'],
                  'datalabels': {
                      'anchor': 'end',
-                     'color': '#fff',
+                     'color': '#aaa',
                      'align': 'top',
                  },
              },
