@@ -17,9 +17,17 @@
       put off by the amount of time it takes to render. So, I figured I'd look
       around for faster options. Aside from the cloud
     </p>
+
+    <h2>Under Construction</h2>
+    <p>
+      This page is still a draft. I'm still adding data, note, and cleaning
+      things up
+    </p>
+
     <canvas id="barChartCanvas"></canvas>
 
     <h3>Notes</h3>
+
     <ul>
       <li>
         These times are for rendings of the
@@ -235,11 +243,25 @@
           "seconds": 347
         },
         {
+          "id": "$0.29~p3.2x",
+          "label": "5m47s",
+          "name": "p3.2x",
+          "price": "0.29",
+          "seconds": 347
+        },
+        {
           "id": "$0.10~g5.x",
           "label": "6m11s",
           "name": "g5.x",
           "price": "0.10",
           "seconds": 371
+        },
+        {
+          "id": "$0.84~g3.16x",
+          "label": "11m3s",
+          "name": "g3.16x",
+          "price": "0.84",
+          "seconds": 663
         },
         {
           "id": "$0.46~g4dn.8x",
@@ -254,6 +276,13 @@
           "name": "g4dn.4x",
           "price": "0.26",
           "seconds": 777
+        },
+        {
+          "id": "$0.95~g4dn.16x",
+          "label": "13m3s",
+          "name": "g4dn.16x",
+          "price": "0.95",
+          "seconds": 783
         },
         {
           "id": "$0.17~g4dn.2x",
@@ -303,12 +332,19 @@
           "name": "g3.4x",
           "price": "0.74",
           "seconds": 2343
+        },
+        {
+          "id": "$0.50~g3s.x",
+          "label": "39m51s",
+          "name": "g3s.x",
+          "price": "0.50",
+          "seconds": 2391
         }
       ],
       "datalabels": {
-        "align": "top",
+        "align": "bottom",
         "anchor": "end",
-        "color": "#aaa"
+        "color": "#000"
       }
     }
   ]
@@ -322,8 +358,8 @@
         colorArray[i] = sourceColors[i % sourceColors.length]
       }
       barChart.data.datasets[0].backgroundColor = colorArray
-      barChart.data.datasets[0].backgroundColor[14] = 'blue'
-      barChart.data.datasets[0].backgroundColor[16] = 'blue'
+      barChart.data.datasets[0].backgroundColor[17] = 'blue'
+      barChart.data.datasets[0].backgroundColor[19] = 'blue'
       barChart.update()
     </script>
   </body>
