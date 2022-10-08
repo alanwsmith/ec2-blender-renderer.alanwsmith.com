@@ -15,8 +15,15 @@
     <p>
       I&apos;ve recently started to get into blender. I was more than a little
       put off by the amount of time it takes to render. So, I figured I'd look
-      around for faster options. Aside from the cloud
+      around for faster options. There are some online services. Their pricing
+      is hard to figure. I'm still looking into them.
     </p>
+    <p>
+      In the mean time, I ran some tests with AWS EC2 instances to see how much
+      it would cost to get things done that way. The chart below shows details
+      on how long a render took and what it cost to make it.
+    </p>
+    <p>More notes are below</p>
 
     <h2>Under Construction</h2>
     <p>
@@ -165,7 +172,7 @@
                 color: '#ccc',
                 callback: function (value) {
                   const parts = this.getLabelForValue(value).split('~')
-                  return parts[0]
+                  return [parts[0], parts[1]]
                 },
               },
             },
