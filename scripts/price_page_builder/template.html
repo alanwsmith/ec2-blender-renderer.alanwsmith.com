@@ -11,12 +11,57 @@
     </style>
   </head>
   <body>
-    <canvas id="barChartCanvas"></canvas>
+    <h1>Amazon AWS EC2 Render Times And Prices</h1>
+    <p>
+      I&apos;ve recently started to get into blender. I was more than a little
+      put off by the amount of time it takes to render. So, I figured I'd look
+      around for faster options. Aside from the cloud
+
+      <canvas id="barChartCanvas"></canvas>
+    </p>
 
     <h3>Notes</h3>
     <ul>
       <li>
-        The MBP is my 2021 M1 Max MacBookPro (model 18.4) with 64GB of memory.
+        These times are for rendings of the
+        <a href="https://download.blender.org/demo/cycles/loft.blend"
+          >loft file</a
+        >
+        from the
+        <a href="https://download.blender.org/demo/cycles/"
+          >Blender cycles demo files</a
+        >
+        on Amazon AWS EC2 instances. You can download it and time a render to do
+        a comparison
+      </li>
+      <li>
+        The renders were done with 'CUDA' on the windows machine and EC2
+        instances and 'METAL' for the mac
+      </li>
+      <li>
+        My 2021 M1 Max MacBookPro (model 18.4) with 64GB of memory and windows
+        machine with a NVIDIA 1080 card in it are also listed as 'MBP' and
+        '1080' respectively
+      </li>
+      <li>The prices are based on On-Demand usage at the time I ran them</li>
+      <li>
+        I tried to run octanebench on my mac but it says no supported GPU is
+        found
+      </li>
+      <li>
+        The methodology was to do three renders of the file. The longest time
+        was thrown out and the other two were averaged
+      </li>
+      <li>
+        The
+        <a
+          href="https://github.com/alanwsmith/ec2-blender-renderer.alanwsmith.com/tree/main/scripts/profile_machine/results"
+          >raw results are here</a
+        >
+      </li>
+      <li>
+        The prices do not include startup and shutdown times for the EC2
+        instances. That cost would need to be calculated based on the use case
       </li>
       <li>
         You have to request quota updates to get access to the 'p' and 'g' type
@@ -56,11 +101,14 @@
             },
           },
           scales: {
+            y: {
+              title: { text: 'Seconds To Render', display: true },
+            },
             x: {
               ticks: {
                 callback: function (value) {
                   const parts = this.getLabelForValue(value).split('~')
-                  return [parts[0], parts[1]]
+                  return parts[0]
                 },
               },
             },
@@ -77,6 +125,7 @@
       }
       barChart.data.datasets[0].backgroundColor = colorArray
       barChart.data.datasets[0].backgroundColor[14] = 'blue'
+      barChart.data.datasets[0].backgroundColor[16] = 'blue'
       barChart.update()
     </script>
   </body>

@@ -2461,6 +2461,122 @@
           ]
         }
       }
+    },
+    "windows-1080": {
+      "samples": {
+        "flat-archiviz": {
+          "details": {
+            "seconds_average_adjusted": 363,
+            "seconds_average_full": 366,
+            "seconds_billing_minimum": 363
+          },
+          "machine_details": {
+            "filename_key": "windows-1080",
+            "type": "windows"
+          },
+          "test_runs": [
+            {
+              "end_time": "2022-10-08 10:26:23.992778",
+              "start_time": "2022-10-08 10:20:12.043836",
+              "time_delta": "0:06:11.948942"
+            },
+            {
+              "end_time": "2022-10-08 10:32:30.373266",
+              "start_time": "2022-10-08 10:26:24.066785",
+              "time_delta": "0:06:06.306481"
+            },
+            {
+              "end_time": "2022-10-08 10:38:32.370306",
+              "start_time": "2022-10-08 10:32:30.425278",
+              "time_delta": "0:06:01.945028"
+            }
+          ]
+        },
+        "loft": {
+          "details": {
+            "seconds_average_adjusted": 1493,
+            "seconds_average_full": 1504,
+            "seconds_billing_minimum": 1493
+          },
+          "machine_details": {
+            "filename_key": "windows-1080",
+            "type": "windows"
+          },
+          "test_runs": [
+            {
+              "end_time": "2022-10-08 11:50:59.216550",
+              "start_time": "2022-10-08 11:25:31.050826",
+              "time_delta": "0:25:28.165724"
+            },
+            {
+              "end_time": "2022-10-08 12:15:22.023788",
+              "start_time": "2022-10-08 11:50:59.288286",
+              "time_delta": "0:24:22.735502"
+            },
+            {
+              "end_time": "2022-10-08 12:40:46.751391",
+              "start_time": "2022-10-08 12:15:22.091804",
+              "time_delta": "0:25:24.659587"
+            }
+          ]
+        },
+        "lone-monk_cycles_and_exposure-node_demo": {
+          "details": {
+            "seconds_average_adjusted": 939,
+            "seconds_average_full": 939,
+            "seconds_billing_minimum": 939
+          },
+          "machine_details": {
+            "filename_key": "windows-1080",
+            "type": "windows"
+          },
+          "test_runs": [
+            {
+              "end_time": "2022-10-08 10:54:12.330899",
+              "start_time": "2022-10-08 10:38:32.402314",
+              "time_delta": "0:15:39.928585"
+            },
+            {
+              "end_time": "2022-10-08 11:09:51.891440",
+              "start_time": "2022-10-08 10:54:12.365907",
+              "time_delta": "0:15:39.525533"
+            },
+            {
+              "end_time": "2022-10-08 11:25:31.021820",
+              "start_time": "2022-10-08 11:09:51.908444",
+              "time_delta": "0:15:39.113376"
+            }
+          ]
+        },
+        "monster_under_the_bed_sss_demo_by_metin_seven": {
+          "details": {
+            "seconds_average_adjusted": 187,
+            "seconds_average_full": 188,
+            "seconds_billing_minimum": 187
+          },
+          "machine_details": {
+            "filename_key": "windows-1080",
+            "type": "windows"
+          },
+          "test_runs": [
+            {
+              "end_time": "2022-10-08 10:13:56.816662",
+              "start_time": "2022-10-08 10:10:46.226887",
+              "time_delta": "0:03:10.589775"
+            },
+            {
+              "end_time": "2022-10-08 10:17:04.512042",
+              "start_time": "2022-10-08 10:13:56.817661",
+              "time_delta": "0:03:07.694381"
+            },
+            {
+              "end_time": "2022-10-08 10:20:12.040845",
+              "start_time": "2022-10-08 10:17:04.513033",
+              "time_delta": "0:03:07.527812"
+            }
+          ]
+        }
+      }
     }
   }
 }

@@ -11,10 +11,49 @@
     </style>
   </head>
   <body>
+    <h1>Amazon AWS EC2 Render Times And Prices</h1>
+
     <canvas id="barChartCanvas"></canvas>
 
     <h3>Notes</h3>
     <ul>
+      <li>
+        These times are for rendings of the
+        <a href="https://download.blender.org/demo/cycles/loft.blend"
+          >loft file</a
+        >
+        from the
+        <a href="https://download.blender.org/demo/cycles/"
+          >Blender cycles demo files</a
+        >
+        on Amazon AWS EC2 instances. You can download it and time a render to do
+        a comparison
+      </li>
+      <li>
+        The renders were done with 'CUDA' on the windows machine and EC2
+        instances and 'METAL' for the mac
+      </li>
+      <li>
+        My 2021 M1 Max MacBookPro (model 18.4) with 64GB of memory and windows
+        machine with a NVIDIA 1080 card in it are also listed as 'MBP' and
+        '1080' respectively
+      </li>
+      <li>The prices are based on On-Demand usage at the time I ran them</li>
+      <li>
+        The methodology was to do three renders of the file. The longest time
+        was thrown out and the other two were averaged
+      </li>
+      <li>
+        The
+        <a
+          href="https://github.com/alanwsmith/ec2-blender-renderer.alanwsmith.com/tree/main/scripts/profile_machine/results"
+          >raw results are here</a
+        >
+      </li>
+      <li>
+        The prices do not include startup and shutdown times for the EC2
+        instances. That cost would need to be calculated based on the use case
+      </li>
       <li>
         You have to request quota updates to get access to the 'p' and 'g' type
         instances. As of press time, this is
@@ -53,11 +92,14 @@
             },
           },
           scales: {
+            y: {
+              title: { text: 'Seconds To Render', display: true },
+            },
             x: {
               ticks: {
                 callback: function (value) {
                   const parts = this.getLabelForValue(value).split('~')
-                  return [parts[0], parts[1]]
+                  return parts[0]
                 },
               },
             },
@@ -72,126 +114,133 @@
       ],
       "data": [
         {
-          "id": "g5.24x~$0.27",
+          "id": "$0.27~g5.24x",
           "label": "1m58s",
           "name": "g5.24x",
           "price": "0.27",
           "seconds": 118
         },
         {
-          "id": "g5.12x~$0.19",
+          "id": "$0.19~g5.12x",
           "label": "1m59s",
           "name": "g5.12x",
           "price": "0.19",
           "seconds": 119
         },
         {
-          "id": "p2.16x~$0.92",
+          "id": "$0.92~p2.16x",
           "label": "3m49s",
           "name": "p2.16x",
           "price": "0.92",
           "seconds": 229
         },
         {
-          "id": "g4dn.12x~$0.26",
+          "id": "$0.26~g4dn.12x",
           "label": "3m59s",
           "name": "g4dn.12x",
           "price": "0.26",
           "seconds": 239
         },
         {
-          "id": "p2.8x~$0.64",
+          "id": "$0.64~p2.8x",
           "label": "5m20s",
           "name": "p2.8x",
           "price": "0.64",
           "seconds": 320
         },
         {
-          "id": "g5.16x~$0.38",
+          "id": "$0.38~g5.16x",
           "label": "5m32s",
           "name": "g5.16x",
           "price": "0.38",
           "seconds": 332
         },
         {
-          "id": "g5.8x~$0.23",
+          "id": "$0.23~g5.8x",
           "label": "5m34s",
           "name": "g5.8x",
           "price": "0.23",
           "seconds": 334
         },
         {
-          "id": "g5.4x~$0.15",
+          "id": "$0.15~g5.4x",
           "label": "5m38s",
           "name": "g5.4x",
           "price": "0.15",
           "seconds": 338
         },
         {
-          "id": "g5.2x~$0.12",
+          "id": "$0.12~g5.2x",
           "label": "5m47s",
           "name": "g5.2x",
           "price": "0.12",
           "seconds": 347
         },
         {
-          "id": "g5.x~$0.10",
+          "id": "$0.10~g5.x",
           "label": "6m11s",
           "name": "g5.x",
           "price": "0.10",
           "seconds": 371
         },
         {
-          "id": "g4dn.8x~$0.46",
+          "id": "$0.46~g4dn.8x",
           "label": "12m46s",
           "name": "g4dn.8x",
           "price": "0.46",
           "seconds": 766
         },
         {
-          "id": "g4dn.4x~$0.26",
+          "id": "$0.26~g4dn.4x",
           "label": "12m57s",
           "name": "g4dn.4x",
           "price": "0.26",
           "seconds": 777
         },
         {
-          "id": "g4dn.2x~$0.17",
+          "id": "$0.17~g4dn.2x",
           "label": "13m38s",
           "name": "g4dn.2x",
           "price": "0.17",
           "seconds": 818
         },
         {
-          "id": "g4dn.x~$0.12",
+          "id": "$0.12~g4dn.x",
           "label": "13m48s",
           "name": "g4dn.x",
           "price": "0.12",
           "seconds": 828
         },
         {
-          "id": "MBP~n/a",
+          "id": "n/a~MBP",
           "label": "18m56s",
           "name": "MBP",
           "price": "n/a",
           "seconds": 1136
         },
         {
-          "id": "g3.8x~$0.79",
+          "id": "$0.79~g3.8x",
           "label": "20m51s",
           "name": "g3.8x",
           "price": "0.79",
           "seconds": 1251
         },
         {
-          "id": "p2.x~$0.48",
+          "id": "n/a~1080",
+          "label": "24m53s",
+          "name": "1080",
+          "price": "n/a",
+          "seconds": 1493
+        },
+        {
+          "id": "$0.48~p2.x",
           "label": "32m16s",
           "name": "p2.x",
           "price": "0.48",
           "seconds": 1936
         },
         {
-          "id": "g3.4x~$0.74",
+          "id": "$0.74~g3.4x",
           "label": "39m3s",
           "name": "g3.4x",
           "price": "0.74",
@@ -216,6 +265,7 @@
       }
       barChart.data.datasets[0].backgroundColor = colorArray
       barChart.data.datasets[0].backgroundColor[14] = 'blue'
+      barChart.data.datasets[0].backgroundColor[16] = 'blue'
       barChart.update()
     </script>
   </body>

@@ -10,7 +10,7 @@ with open('../report_maker/report_data.json') as _report_data:
     times = []
     for machine_name in report_data['machines'].keys():
         machine = {
-            "name": machine_name.replace('large', '').replace('MacBookPro18.4', 'MBP')
+            "name": machine_name.replace('large', '').replace('MacBookPro18.4', 'MBP').replace('windows-', '')
         }
         if 'price_base' in report_data['machines'][machine_name]['samples']['loft']['details']:
             machine['price'] = "{:.2f}".format(report_data['machines'][machine_name]['samples']['loft']['details']['price_base'])
@@ -22,10 +22,12 @@ with open('../report_maker/report_data.json') as _report_data:
         # Add price here so it can be split out later since
         # that's the only way I've figured out how to do 
         # multilines
+
         if machine['price'] == 'n/a':
-            machine['id'] = f"{machine['name']}~{machine['price']}"
+            machine['id'] = f"{machine['price']}~{machine['name']}"
         else:
-            machine['id'] = f"{machine['name']}~${machine['price']}"
+            machine['id'] = f"${machine['price']}~{machine['name']}"
+
 
         machine['label'] = f"{int(machine['seconds'] / 60)}m{machine['seconds'] % 60}s"
         machines_v2.append(machine)
