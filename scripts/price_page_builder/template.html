@@ -3,7 +3,6 @@
   <head>
     <script src="/assets/chartjs/chart-3-9-1.min.js"></script>
     <script src="/assets/chartjs/chartjs-plugin-datalabels-2-1-0.min.js"></script>
-
     <style>
       body {
         background-color: #000;
@@ -13,7 +12,6 @@
   </head>
   <body>
     <canvas id="myChart"></canvas>
-
     <script>
       Chart.register(ChartDataLabels)
       const myChart = new Chart(document.getElementById('myChart'), {
@@ -37,7 +35,8 @@
             x: {
               ticks: {
                 callback: function (value) {
-                  return this.getLabelForValue(value).split('~')
+                  const parts = this.getLabelForValue(value).split('~')
+                  return [parts[0], parts[1]]
                 },
               },
             },

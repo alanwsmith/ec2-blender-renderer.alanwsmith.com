@@ -22,11 +22,8 @@ with open('../report_maker/report_data.json') as _report_data:
         # Add price here so it can be split out later since
         # that's the only way I've figured out how to do 
         # multilines
-        machine['id'] = f"{machine['name']}~{machine['price']}"
-
+        machine['id'] = f"{machine['name']}~${machine['price']}"
         machine['label'] = f"{int(machine['seconds'] / 60)}m{machine['seconds'] % 60}s"
-        machine['bottom_label'] = [machine['name'], machine['price']]
-
         machines_v2.append(machine)
 
     machines_v2.sort(key=lambda x: (x['seconds'], x['price']))
@@ -85,5 +82,4 @@ with open('../report_maker/report_data.json') as _report_data:
                     DATA_OBJECT=json.dumps(data_object, sort_keys=True, indent=2, default=str),
                 )
             )
-
 

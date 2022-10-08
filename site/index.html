@@ -3,7 +3,6 @@
   <head>
     <script src="/assets/chartjs/chart-3-9-1.min.js"></script>
     <script src="/assets/chartjs/chartjs-plugin-datalabels-2-1-0.min.js"></script>
-
     <style>
       body {
         background-color: #000;
@@ -13,7 +12,6 @@
   </head>
   <body>
     <canvas id="myChart"></canvas>
-
     <script>
       Chart.register(ChartDataLabels)
       const myChart = new Chart(document.getElementById('myChart'), {
@@ -37,7 +35,8 @@
             x: {
               ticks: {
                 callback: function (value) {
-                  return this.getLabelForValue(value).split('~')
+                  const parts = this.getLabelForValue(value).split('~')
+                  return [parts[0], parts[1]]
                 },
               },
             },
@@ -52,198 +51,126 @@
       ],
       "data": [
         {
-          "bottom_label": [
-            "g5.24x",
-            "0.27"
-          ],
-          "id": "g5.24x~0.27",
+          "id": "g5.24x~$0.27",
           "label": "1m58s",
           "name": "g5.24x",
           "price": "0.27",
           "seconds": 118
         },
         {
-          "bottom_label": [
-            "g5.12x",
-            "0.19"
-          ],
-          "id": "g5.12x~0.19",
+          "id": "g5.12x~$0.19",
           "label": "1m59s",
           "name": "g5.12x",
           "price": "0.19",
           "seconds": 119
         },
         {
-          "bottom_label": [
-            "p2.16x",
-            "0.92"
-          ],
-          "id": "p2.16x~0.92",
+          "id": "p2.16x~$0.92",
           "label": "3m49s",
           "name": "p2.16x",
           "price": "0.92",
           "seconds": 229
         },
         {
-          "bottom_label": [
-            "g4dn.12x",
-            "0.26"
-          ],
-          "id": "g4dn.12x~0.26",
+          "id": "g4dn.12x~$0.26",
           "label": "3m59s",
           "name": "g4dn.12x",
           "price": "0.26",
           "seconds": 239
         },
         {
-          "bottom_label": [
-            "p2.8x",
-            "0.64"
-          ],
-          "id": "p2.8x~0.64",
+          "id": "p2.8x~$0.64",
           "label": "5m20s",
           "name": "p2.8x",
           "price": "0.64",
           "seconds": 320
         },
         {
-          "bottom_label": [
-            "g5.16x",
-            "0.38"
-          ],
-          "id": "g5.16x~0.38",
+          "id": "g5.16x~$0.38",
           "label": "5m32s",
           "name": "g5.16x",
           "price": "0.38",
           "seconds": 332
         },
         {
-          "bottom_label": [
-            "g5.8x",
-            "0.23"
-          ],
-          "id": "g5.8x~0.23",
+          "id": "g5.8x~$0.23",
           "label": "5m34s",
           "name": "g5.8x",
           "price": "0.23",
           "seconds": 334
         },
         {
-          "bottom_label": [
-            "g5.4x",
-            "0.15"
-          ],
-          "id": "g5.4x~0.15",
+          "id": "g5.4x~$0.15",
           "label": "5m38s",
           "name": "g5.4x",
           "price": "0.15",
           "seconds": 338
         },
         {
-          "bottom_label": [
-            "g5.2x",
-            "0.12"
-          ],
-          "id": "g5.2x~0.12",
+          "id": "g5.2x~$0.12",
           "label": "5m47s",
           "name": "g5.2x",
           "price": "0.12",
           "seconds": 347
         },
         {
-          "bottom_label": [
-            "g5.x",
-            "0.10"
-          ],
-          "id": "g5.x~0.10",
+          "id": "g5.x~$0.10",
           "label": "6m11s",
           "name": "g5.x",
           "price": "0.10",
           "seconds": 371
         },
         {
-          "bottom_label": [
-            "g4dn.8x",
-            "0.46"
-          ],
-          "id": "g4dn.8x~0.46",
+          "id": "g4dn.8x~$0.46",
           "label": "12m46s",
           "name": "g4dn.8x",
           "price": "0.46",
           "seconds": 766
         },
         {
-          "bottom_label": [
-            "g4dn.4x",
-            "0.26"
-          ],
-          "id": "g4dn.4x~0.26",
+          "id": "g4dn.4x~$0.26",
           "label": "12m57s",
           "name": "g4dn.4x",
           "price": "0.26",
           "seconds": 777
         },
         {
-          "bottom_label": [
-            "g4dn.2x",
-            "0.17"
-          ],
-          "id": "g4dn.2x~0.17",
+          "id": "g4dn.2x~$0.17",
           "label": "13m38s",
           "name": "g4dn.2x",
           "price": "0.17",
           "seconds": 818
         },
         {
-          "bottom_label": [
-            "g4dn.x",
-            "0.12"
-          ],
-          "id": "g4dn.x~0.12",
+          "id": "g4dn.x~$0.12",
           "label": "13m48s",
           "name": "g4dn.x",
           "price": "0.12",
           "seconds": 828
         },
         {
-          "bottom_label": [
-            "MBP",
-            "n/a"
-          ],
-          "id": "MBP~n/a",
+          "id": "MBP~$n/a",
           "label": "18m56s",
           "name": "MBP",
           "price": "n/a",
           "seconds": 1136
         },
         {
-          "bottom_label": [
-            "g3.8x",
-            "0.79"
-          ],
-          "id": "g3.8x~0.79",
+          "id": "g3.8x~$0.79",
           "label": "20m51s",
           "name": "g3.8x",
           "price": "0.79",
           "seconds": 1251
         },
         {
-          "bottom_label": [
-            "p2.x",
-            "0.48"
-          ],
-          "id": "p2.x~0.48",
+          "id": "p2.x~$0.48",
           "label": "32m16s",
           "name": "p2.x",
           "price": "0.48",
           "seconds": 1936
         },
         {
-          "bottom_label": [
-            "g3.4x",
-            "0.74"
-          ],
-          "id": "g3.4x~0.74",
+          "id": "g3.4x~$0.74",
           "label": "39m3s",
           "name": "g3.4x",
           "price": "0.74",
