@@ -76,10 +76,9 @@ with open('../report_maker/report_data.json') as _report_data:
                      'blue'
                  ],
                  'datalabels': {
-                    'backgroundColor': '#333',
                     'anchor': 'end',
-                    'color': '#cc7',
-                    'align': 'bottom',
+                    'color': '#987',
+                    'align': 'top',
                     'font': {
                     }
                  },
