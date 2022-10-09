@@ -1,6 +1,6 @@
 #!/bin/bash
 
-INSTANCE_TYPE="g4dn.16xlarge"
+INSTANCE_TYPE="g4dn.metal"
 echo "Prepping Launch For: $INSTANCE_TYPE"
 echo "--subnet-id $AWS_PUBLIC_SUBNET_EXAMPLE"
 echo "--security-group-ids $AWS_SECURITY_GROUP_EXAMPLE"

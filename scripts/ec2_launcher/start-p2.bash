@@ -34,7 +34,7 @@ echo "echo '$ENCODED_06' | base64 -d > /home/ubuntu/setup/steps/06.bash" >> _com
 echo 'reboot' >> _combined-install-script.bash 
 
 
-INSTANCE_TYPE="p3.8xlarge"
+INSTANCE_TYPE="p3.16xlarge"
 echo "Launching $INSTANCE_TYPE"
 
 aws ec2 run-instances \
