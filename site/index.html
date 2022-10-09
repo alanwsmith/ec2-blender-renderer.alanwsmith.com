@@ -6,7 +6,10 @@
     <title>EC2 Blender Renderer</title>
     <meta property="og:type" content="website" />
     <meta property="og:title" content="EC2 Blender Renderer" />
-    <meta property="og:description" content="A look at using Amazon AWS EC2 Instances to render Blender files" />
+    <meta
+      property="og:description"
+      content="A look at using Amazon AWS EC2 Instances to render Blender files"
+    />
     <meta
       property="og:image"
       content="https://ec2-blender-renderer.alanwsmith.com/assets/og-images/main.png"
@@ -14,7 +17,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site:id" content="@TheIdOfAlan" />
     <meta name="twitter:creator" content="@TheIdOfAlan" />
-  
+
     <link
       rel="icon"
       type="image/png"
@@ -77,8 +80,18 @@
         display: grid;
         grid-template-rows: auto 1fr auto;
       }
-      h1, h2, h3, h4, h5, h6 {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
         color: #fffffe;
+      }
+      h1 {
+        border-bottom: 1px solid #aae;
+        margin-bottom: 20px;
+        padding-bottom: 18px;
       }
       a {
         color: #eebbc3;
@@ -115,6 +128,11 @@
         max-width: 860px;
         padding-top: 26px;
         padding-bottom: 46px;
+      }
+      #draft_notes {
+        padding-top: 26px;
+        margin-top: 26px;
+        border-top: 1px solid #aae;
       }
     </style>
 
@@ -217,7 +235,6 @@
       }
       document.addEventListener('DOMContentLoaded', renderChart)
     </script>
-
   </head>
   <body>
     <header>
@@ -231,38 +248,52 @@
 
         <h2>TL;DR</h2>
 
-        <p>For about twenty cents I can render a Blender image in two minutes that would take nineteen minutes on my machine.</p>
+        <p>
+          For about twenty cents, I can render a Blender image in two minutes on
+          an Amazon EC2 &quot;g5.12xlarge&quot; cloud computer that would take
+          nineteen minutes to render on my peronal machine.
+        </p>
 
         <h2>Overview</h2>
 
         <p>
-          I&apos;ve recently started to get into blender. I was more than a little
-          put off by the amount of time it takes to render. I figured I&apos;d look
-          around for faster options. There are some online services. Their pricing
-          is hard to figure. I'm still looking into them.
+          I&apos;ve recently started getting into blender. I was more than a
+          little put off by the amount of time it takes to render an image.
+          Looking around for options I found some online render farm services.
+          They seem geared more toward animation and their prices are hard to
+          figure out. Actually trying them seems to be the only way I&apos;ll be
+          able to figure out the prices.
         </p>
         <p>
-          In the mean time, I ran some tests with AWS EC2 instances to see how
-          much it would cost to get things done that way. After going through just about all the EC2 instances with GPUs I 
-          
-          The chart below shows
-          details on how long a render took and what it cost to make it.
-        </p>
-        <p>More notes are below</p>
-        <h2>Under Construction</h2>
-        <p>
-          This page is still a draft. I'm still adding data, note, and cleaning
-          things up
+          In the mean time, I ran some tests on
+          <a href="https://aws.amazon.com/ec2/"
+            >Amazon AWS EC2 cloud computer instances</a
+          >
+          to see how fast they can render and how much it would cost. After
+          going through the various GPU based configurations I ended up with
+          this chart:
         </p>
       </div>
-      
+
       <div class="chart_wrapper">
         <canvas id="barChartCanvas"></canvas>
       </div>
-      
 
       <div class="prose_wrapper">
-        <h3>Draft Notes (In No Particular Order)</h3>
+        <p>
+          The the blue MacBookPro and NVIDIA 1080 bars represent my personal
+          machines. The green bars are the best values from the Amazon EC2
+          offerings.
+        </p>
+        <p>
+          I wouldn't be surprised to find that one of the dedicated rendering
+          farms is less expensive, but these&apos;s prices aren't bad for the
+          time savings. If I find that the cost is better on the AWS EC2 side,
+          I'll some scripts to help automate the process and do a full write up
+          on how to use the service.
+        </p>
+
+        <h3 id="draft_notes">Draft Notes (In No Particular Order)</h3>
         <ul>
           <li>
             These times are for rendings of the
@@ -273,8 +304,8 @@
             <a href="https://download.blender.org/demo/cycles/"
               >Blender cycles demo files</a
             >
-            on Amazon AWS EC2 instances. You can download it and time a render to
-            do a comparison
+            on Amazon AWS EC2 instances. You can download it and time a render
+            to do a comparison
           </li>
           <li>
             I'm not interested in animation at this point. Just still frames. So
@@ -285,19 +316,21 @@
             instances and 'METAL' for the mac
           </li>
           <li>
-            My 2021 M1 Max MacBookPro (model 18.4) with 64GB of memory and windows
-            machine with a NVIDIA GTX 1080 card in it are also listed as 'MBP' and
-            '1080' respectively
+            My 2021 M1 Max MacBookPro (model 18.4) with 64GB of memory and
+            windows machine with a NVIDIA GTX 1080 card in it are also listed as
+            'MBP' and '1080' respectively
           </li>
-          <li>The prices are based on On-Demand usage at the time I ran them</li>
+          <li>
+            The prices are based on On-Demand usage at the time I ran them
+          </li>
           <li>The octanebench score on my windows machine is 135.33.</li>
           <li>
             I tried to run octanebench on my mac but it says no supported GPU is
             found
           </li>
           <li>
-            The methodology was to do three renders of the file. The longest time
-            was thrown out and the other two were averaged
+            The methodology was to do three renders of the file. The longest
+            time was thrown out and the other two were averaged
           </li>
           <li>
             The
@@ -308,12 +341,13 @@
           </li>
           <li>
             The prices do not include startup and shutdown times for the EC2
-            instances. That cost would need to be calculated based on the use case
+            instances. That cost would need to be calculated based on the use
+            case
           </li>
           <li>
-            There will also be some cost for the first time you setup a machine to
-            get all the installs in place. (An AMI could take care of that aspect
-            though)
+            There will also be some cost for the first time you setup a machine
+            to get all the installs in place. (An AMI could take care of that
+            aspect though)
           </li>
           <li>
             You have to request quota updates to get access to the 'p' and 'g'
@@ -321,8 +355,8 @@
             <a
               href="https://us-east-1.console.aws.amazon.com/servicequotas/home/services/ec2/quotas"
               >the page to request quota increases</a
-            >. Search for 'demand'. Then put in requests for 'Running On-Demand G
-            and VT instances' and 'Running On-Demand P instances'. The biggest
+            >. Search for 'demand'. Then put in requests for 'Running On-Demand
+            G and VT instances' and 'Running On-Demand P instances'. The biggest
             machine 'p' instance is 96 vCPU and the biggest 'g' is 192. They
             didn't give me the 192 max on the 'g' instances the first time I
             asked.
@@ -338,32 +372,32 @@
             is &dollar;1.
           </li>
           <li>
-            The time from garagefarm said 0h 0min. So, not sure how long it would
-            actually take.
+            The time from garagefarm said 0h 0min. So, not sure how long it
+            would actually take.
           </li>
           <li>
             The <a href="https://blendergrid.com">blendergrid.com</a> pricing
             calculor isn't much help with single frame setups and doesn't look
-            like it's working right for me. I adjusted the number of notes from 5
-            to 50 and the price didn't change which seems weird. ,
+            like it's working right for me. I adjusted the number of notes from
+            5 to 50 and the price didn't change which seems weird. ,
           </li>
           <li>
-            <a href="https://render.st/plans-pricing/">render steet</a> estimate:
-            &dollar;1.09 - finishing in 1-2 hours. These places seem to be much
-            more about animations than single frames.
+            <a href="https://render.st/plans-pricing/">render steet</a>
+            estimate: &dollar;1.09 - finishing in 1-2 hours. These places seem
+            to be much more about animations than single frames.
           </li>
           <li>
             You could have some hitches starting and stopping the machines. It
-            looks like the system that keeps track of the number of vCPUs you have
-            running isn't updated live. I've had cases where I've shut an instance
-            down then tried to start it back a minute or so later and couldn't
-            because it said I hit the vCPU limit. After waiting a bit, it fixed
-            itself and I could launch again
+            looks like the system that keeps track of the number of vCPUs you
+            have running isn't updated live. I've had cases where I've shut an
+            instance down then tried to start it back a minute or so later and
+            couldn't because it said I hit the vCPU limit. After waiting a bit,
+            it fixed itself and I could launch again
           </li>
           <li>
-            Sometimes you get an error like this if there isn't enough capacity on
-            the AWS site: An error occurred (InsufficientInstanceCapacity) when
-            calling the RunInstances operation (reached max retries: 2): We
+            Sometimes you get an error like this if there isn't enough capacity
+            on the AWS site: An error occurred (InsufficientInstanceCapacity)
+            when calling the RunInstances operation (reached max retries: 2): We
             currently do not have sufficient p3.8xlarge capacity in the
             Availability Zone you requested (us-east-1c). Our system will be
             working on provisioning additional capacity. You can currently get
@@ -371,14 +405,14 @@
             request or choosing us-east-1b, us-east-1d, us-east-1f.
           </li>
           <li>
-            I had a bunch of problems with the g4dn.metal instance not wanting to
-            start and seeming to hang. Could have been something with my script.
-            Just not sure what happened.
+            I had a bunch of problems with the g4dn.metal instance not wanting
+            to start and seeming to hang. Could have been something with my
+            script. Just not sure what happened.
           </li>
           <li>
-            I tested most of the avaialble EC2 instances that have graphics cards.
-            I filtered the data down to the set above based on the cost and time
-            spent. The full dataset is in
+            I tested most of the avaialble EC2 instances that have graphics
+            cards. I filtered the data down to the set above based on the cost
+            and time spent. The full dataset is in
             <a
               href="https://github.com/alanwsmith/ec2-blender-renderer.alanwsmith.com"
               >the repo</a
@@ -386,13 +420,12 @@
             if you'd like to dig into it.
           </li>
           <li>
-            I ran all these tests with `CUDA`. I didn't do any with `CUDA+CPU` or
-            the other rendering options. There may be some additional savings
+            I ran all these tests with `CUDA`. I didn't do any with `CUDA+CPU`
+            or the other rendering options. There may be some additional savings
             there, but worst case you get what's above.
           </li>
         </ul>
       </div>
-  
     </main>
     <footer>
       made by <a href="https://twitter.com/TheIdOfAlan">alan w. smith</a>
@@ -401,7 +434,5 @@
       <a href="https://podcast.alanwsmith.com/">podcast</a> <br />
       among other <a href="https://links.alanwsmith.com">things</a>
     </footer>
-
   </body>
 </html>
-
