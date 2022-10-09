@@ -149,6 +149,11 @@
           p3.8xlarge capacity by not specifying an Availability Zone in your
           request or choosing us-east-1b, us-east-1d, us-east-1f.
         </li>
+        <li>
+          I had a bunch of problems with the g4dn.metal instance not wanting to
+          start and seeming to hang. Could have been something with my script.
+          Just not sure what happened.
+        </li>
       </ul>
     </div>
 
@@ -195,6 +200,13 @@
         "#628E90"
       ],
       "data": [
+        {
+          "id": "$0.73~p3.16x",
+          "label": "1m48s",
+          "name": "p3.16x",
+          "price": "0.73",
+          "seconds": 108
+        },
         {
           "id": "$0.27~g5.24x",
           "label": "1m58s",
@@ -381,8 +393,8 @@
         colorArray[i] = sourceColors[i % sourceColors.length]
       }
       barChart.data.datasets[0].backgroundColor = colorArray
-      barChart.data.datasets[0].backgroundColor[17] = 'blue'
       barChart.data.datasets[0].backgroundColor[19] = 'blue'
+      barChart.data.datasets[0].backgroundColor[21] = 'blue'
       barChart.update()
     </script>
   </body>
