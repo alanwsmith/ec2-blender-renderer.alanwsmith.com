@@ -10,12 +10,18 @@
       }
       .prose_wrapper {
         margin: auto;
-        width: 74ch;
+        max-width: 84ch;
+      }
+      .chart_wrapper {
+        margin: auto;
+        max-width: 860px;
+          padding-top: 26px;
+          padding-bottom: 46px;
       }
     </style>
   </head>
   <body>
-    <div id="prose_wrapper">
+    <div class="prose_wrapper">
       <h1>Amazon AWS EC2 Render Times And Prices</h1>
 
       <p>
@@ -38,10 +44,12 @@
       </p>
     </div>
 
-    <canvas id="barChartCanvas"></canvas>
+    <div class="chart_wrapper">
+      <canvas id="barChartCanvas"></canvas>
+    </div>
 
-    <div id="prose_wrapper">
-      <h3>Notes</h3>
+    <div class="prose_wrapper">
+      <h3>Draft Notes (In No Particular Order)</h3>
       <ul>
         <li>
           These times are for rendings of the
@@ -154,6 +162,21 @@
           start and seeming to hang. Could have been something with my script.
           Just not sure what happened.
         </li>
+        <li>
+          I tested most of the avaialble EC2 instances that have graphics cards.
+          I filtered the data down to the set above based on the cost and time
+          spent. The full dataset is in
+          <a
+            href="https://github.com/alanwsmith/ec2-blender-renderer.alanwsmith.com"
+            >the repo</a
+          >
+          if you'd like to dig into it.
+        </li>
+        <li>
+          I ran all these tests with `CUDA`. I didn't do any with `CUDA+CPU` or
+          the other rendering options. There may be some additional savings
+          there, but worst case you get what's above.
+        </li>
       </ul>
     </div>
 
@@ -196,190 +219,55 @@
   "datasets": [
     {
       "backgroundColor": [
-        "#256D85",
-        "#628E90"
+        "green",
+        "green",
+        "green",
+        "blue",
+        "blue"
       ],
       "data": [
         {
-          "id": "$0.73~p3.16x",
+          "id": "p3.16xlarge~$0.73",
           "label": "1m48s",
-          "name": "p3.16x",
+          "name": "p3.16xlarge",
           "price": "0.73",
           "seconds": 108
         },
         {
-          "id": "$0.27~g5.24x",
-          "label": "1m58s",
-          "name": "g5.24x",
-          "price": "0.27",
-          "seconds": 118
-        },
-        {
-          "id": "$0.19~g5.12x",
+          "id": "g5.12xlarge~$0.19",
           "label": "1m59s",
-          "name": "g5.12x",
+          "name": "g5.12xlarge",
           "price": "0.19",
           "seconds": 119
         },
         {
-          "id": "$0.45~p3.8x",
-          "label": "2m11s",
-          "name": "p3.8x",
-          "price": "0.45",
-          "seconds": 131
-        },
-        {
-          "id": "$0.92~p2.16x",
-          "label": "3m49s",
-          "name": "p2.16x",
-          "price": "0.92",
-          "seconds": 229
-        },
-        {
-          "id": "$0.26~g4dn.12x",
-          "label": "3m59s",
-          "name": "g4dn.12x",
-          "price": "0.26",
-          "seconds": 239
-        },
-        {
-          "id": "$0.64~p2.8x",
-          "label": "5m20s",
-          "name": "p2.8x",
-          "price": "0.64",
-          "seconds": 320
-        },
-        {
-          "id": "$0.38~g5.16x",
-          "label": "5m32s",
-          "name": "g5.16x",
-          "price": "0.38",
-          "seconds": 332
-        },
-        {
-          "id": "$0.23~g5.8x",
-          "label": "5m34s",
-          "name": "g5.8x",
-          "price": "0.23",
-          "seconds": 334
-        },
-        {
-          "id": "$0.15~g5.4x",
-          "label": "5m38s",
-          "name": "g5.4x",
-          "price": "0.15",
-          "seconds": 338
-        },
-        {
-          "id": "$0.12~g5.2x",
-          "label": "5m47s",
-          "name": "g5.2x",
-          "price": "0.12",
-          "seconds": 347
-        },
-        {
-          "id": "$0.29~p3.2x",
-          "label": "5m47s",
-          "name": "p3.2x",
-          "price": "0.29",
-          "seconds": 347
-        },
-        {
-          "id": "$0.10~g5.x",
+          "id": "g5.xlarge~$0.10",
           "label": "6m11s",
-          "name": "g5.x",
+          "name": "g5.xlarge",
           "price": "0.10",
           "seconds": 371
         },
         {
-          "id": "$0.84~g3.16x",
-          "label": "11m3s",
-          "name": "g3.16x",
-          "price": "0.84",
-          "seconds": 663
-        },
-        {
-          "id": "$0.46~g4dn.8x",
-          "label": "12m46s",
-          "name": "g4dn.8x",
-          "price": "0.46",
-          "seconds": 766
-        },
-        {
-          "id": "$0.26~g4dn.4x",
-          "label": "12m57s",
-          "name": "g4dn.4x",
-          "price": "0.26",
-          "seconds": 777
-        },
-        {
-          "id": "$0.95~g4dn.16x",
-          "label": "13m3s",
-          "name": "g4dn.16x",
-          "price": "0.95",
-          "seconds": 783
-        },
-        {
-          "id": "$0.17~g4dn.2x",
-          "label": "13m38s",
-          "name": "g4dn.2x",
-          "price": "0.17",
-          "seconds": 818
-        },
-        {
-          "id": "$0.12~g4dn.x",
-          "label": "13m48s",
-          "name": "g4dn.x",
-          "price": "0.12",
-          "seconds": 828
-        },
-        {
-          "id": "n/a~MBP",
+          "id": "MacBookPro~n/a",
           "label": "18m56s",
-          "name": "MBP",
+          "name": "MacBookPro",
           "price": "n/a",
           "seconds": 1136
         },
         {
-          "id": "$0.79~g3.8x",
-          "label": "20m51s",
-          "name": "g3.8x",
-          "price": "0.79",
-          "seconds": 1251
-        },
-        {
-          "id": "n/a~1080",
+          "id": "NVIDIA 1080~n/a",
           "label": "24m53s",
-          "name": "1080",
+          "name": "NVIDIA 1080",
           "price": "n/a",
           "seconds": 1493
-        },
-        {
-          "id": "$0.48~p2.x",
-          "label": "32m16s",
-          "name": "p2.x",
-          "price": "0.48",
-          "seconds": 1936
-        },
-        {
-          "id": "$0.74~g3.4x",
-          "label": "39m3s",
-          "name": "g3.4x",
-          "price": "0.74",
-          "seconds": 2343
-        },
-        {
-          "id": "$0.50~g3s.x",
-          "label": "39m51s",
-          "name": "g3s.x",
-          "price": "0.50",
-          "seconds": 2391
         }
       ],
       "datalabels": {
         "align": "bottom",
         "anchor": "end",
-        "color": "#000"
+        "backgroundColor": "#333",
+        "color": "#cc7",
+        "font": {}
       }
     }
   ]
@@ -392,10 +280,11 @@
         console.log(i)
         colorArray[i] = sourceColors[i % sourceColors.length]
       }
-      barChart.data.datasets[0].backgroundColor = colorArray
-      barChart.data.datasets[0].backgroundColor[19] = 'blue'
-      barChart.data.datasets[0].backgroundColor[21] = 'blue'
-      barChart.update()
+
+      // barChart.data.datasets[0].backgroundColor = colorArray
+      // barChart.data.datasets[0].backgroundColor[19] = 'blue'
+      // barChart.data.datasets[0].backgroundColor[21] = 'blue'
+      // barChart.update()
     </script>
   </body>
 </html>
