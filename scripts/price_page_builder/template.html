@@ -10,12 +10,18 @@
       }
       .prose_wrapper {
         margin: auto;
-        width: 74ch;
+        max-width: 84ch;
+      }
+      .chart_wrapper {
+        margin: auto;
+        max-width: 860px;
+        padding-top: 26px;
+        padding-bottom: 46px;
       }
     </style>
   </head>
   <body>
-    <div id="prose_wrapper">
+    <div class="prose_wrapper">
       <h1>Amazon AWS EC2 Render Times And Prices</h1>
 
       <p>
@@ -38,10 +44,12 @@
       </p>
     </div>
 
-    <canvas id="barChartCanvas"></canvas>
+    <div class="chart_wrapper">
+      <canvas id="barChartCanvas"></canvas>
+    </div>
 
-    <div id="prose_wrapper">
-      <h3>Notes</h3>
+    <div class="prose_wrapper">
+      <h3>Draft Notes (In No Particular Order)</h3>
       <ul>
         <li>
           These times are for rendings of the
@@ -154,6 +162,21 @@
           start and seeming to hang. Could have been something with my script.
           Just not sure what happened.
         </li>
+        <li>
+          I tested most of the avaialble EC2 instances that have graphics cards.
+          I filtered the data down to the set above based on the cost and time
+          spent. The full dataset is in
+          <a
+            href="https://github.com/alanwsmith/ec2-blender-renderer.alanwsmith.com"
+            >the repo</a
+          >
+          if you'd like to dig into it.
+        </li>
+        <li>
+          I ran all these tests with `CUDA`. I didn't do any with `CUDA+CPU` or
+          the other rendering options. There may be some additional savings
+          there, but worst case you get what's above.
+        </li>
       </ul>
     </div>
 
@@ -201,10 +224,11 @@
         console.log(i)
         colorArray[i] = sourceColors[i % sourceColors.length]
       }
-      barChart.data.datasets[0].backgroundColor = colorArray
-      barChart.data.datasets[0].backgroundColor[19] = 'blue'
-      barChart.data.datasets[0].backgroundColor[21] = 'blue'
-      barChart.update()
+
+      // barChart.data.datasets[0].backgroundColor = colorArray
+      // barChart.data.datasets[0].backgroundColor[19] = 'blue'
+      // barChart.data.datasets[0].backgroundColor[21] = 'blue'
+      // barChart.update()
     </script>
   </body>
 </html>
