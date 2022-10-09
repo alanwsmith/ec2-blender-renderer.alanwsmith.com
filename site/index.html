@@ -8,140 +8,149 @@
         background-color: #000;
         color: #270;
       }
+      .prose_wrapper {
+        margin: auto;
+        width: 74ch;
+      }
     </style>
   </head>
   <body>
-    <h1>Amazon AWS EC2 Render Times And Prices</h1>
-    <p>
-      I&apos;ve recently started to get into blender. I was more than a little
-      put off by the amount of time it takes to render. So, I figured I'd look
-      around for faster options. There are some online services. Their pricing
-      is hard to figure. I'm still looking into them.
-    </p>
-    <p>
-      In the mean time, I ran some tests with AWS EC2 instances to see how much
-      it would cost to get things done that way. The chart below shows details
-      on how long a render took and what it cost to make it.
-    </p>
-    <p>More notes are below</p>
+    <div id="prose_wrapper">
+      <h1>Amazon AWS EC2 Render Times And Prices</h1>
 
-    <h2>Under Construction</h2>
-    <p>
-      This page is still a draft. I'm still adding data, note, and cleaning
-      things up
-    </p>
+      <p>
+        I&apos;ve recently started to get into blender. I was more than a little
+        put off by the amount of time it takes to render. So, I figured I'd look
+        around for faster options. There are some online services. Their pricing
+        is hard to figure. I'm still looking into them.
+      </p>
+      <p>
+        In the mean time, I ran some tests with AWS EC2 instances to see how
+        much it would cost to get things done that way. The chart below shows
+        details on how long a render took and what it cost to make it.
+      </p>
+      <p>More notes are below</p>
+
+      <h2>Under Construction</h2>
+      <p>
+        This page is still a draft. I'm still adding data, note, and cleaning
+        things up
+      </p>
+    </div>
 
     <canvas id="barChartCanvas"></canvas>
 
-    <h3>Notes</h3>
-
-    <ul>
-      <li>
-        These times are for rendings of the
-        <a href="https://download.blender.org/demo/cycles/loft.blend"
-          >loft file</a
-        >
-        from the
-        <a href="https://download.blender.org/demo/cycles/"
-          >Blender cycles demo files</a
-        >
-        on Amazon AWS EC2 instances. You can download it and time a render to do
-        a comparison
-      </li>
-      <li>
-        I'm not interested in animation at this point. Just still frames. So
-        this look at the serivces is in that light
-      </li>
-      <li>
-        The renders were done with 'CUDA' on the windows machine and EC2
-        instances and 'METAL' for the mac
-      </li>
-      <li>
-        My 2021 M1 Max MacBookPro (model 18.4) with 64GB of memory and windows
-        machine with a NVIDIA GTX 1080 card in it are also listed as 'MBP' and
-        '1080' respectively
-      </li>
-      <li>The prices are based on On-Demand usage at the time I ran them</li>
-      <li>The octanebench score on my windows machine is 135.33.</li>
-      <li>
-        I tried to run octanebench on my mac but it says no supported GPU is
-        found
-      </li>
-      <li>
-        The methodology was to do three renders of the file. The longest time
-        was thrown out and the other two were averaged
-      </li>
-      <li>
-        The
-        <a
-          href="https://github.com/alanwsmith/ec2-blender-renderer.alanwsmith.com/tree/main/scripts/profile_machine/results"
-          >raw results are here</a
-        >
-      </li>
-      <li>
-        The prices do not include startup and shutdown times for the EC2
-        instances. That cost would need to be calculated based on the use case
-      </li>
-      <li>
-        There will also be some cost for the first time you setup a machine to
-        get all the installs in place. (An AMI could take care of that aspect
-        though)
-      </li>
-      <li>
-        You have to request quota updates to get access to the 'p' and 'g' type
-        instances. As of press time, this is
-        <a
-          href="https://us-east-1.console.aws.amazon.com/servicequotas/home/services/ec2/quotas"
-          >the page to request quota increases</a
-        >. Search for 'demand'. Then put in requests for 'Running On-Demand G
-        and VT instances' and 'Running On-Demand P instances'. The biggest
-        machine 'p' instance is 96 vCPU and the biggest 'g' is 192. They didn't
-        give me the 192 max on the 'g' instances the first time I asked.
-      </li>
-
-      <li>
-        The p4d.24xlarge was not available in `us-east-1a` when i tested. (TODO
-        confirm if you did `1b`, `1c`, or `1d` based off the error message
-      </li>
-      <li>
-        I looked at <a href="https://garagefarm.net">garagefarm.net</a> and from
-        what I can tell from their pricing calculator the minumum chart is
-        &dollar;1.
-      </li>
-      <li>
-        The time from garagefarm said 0h 0min. So, not sure how long it would
-        actually take.
-      </li>
-      <li>
-        The <a href="https://blendergrid.com">blendergrid.com</a> pricing
-        calculor isn't much help with single frame setups and doesn't look like
-        it's working right for me. I adjusted the number of notes from 5 to 50
-        and the price didn't change which seems weird. ,
-      </li>
-      <li>
-        <a href="https://render.st/plans-pricing/">render steet</a> estimate:
-        &dollar;1.09 - finishing in 1-2 hours. These places seem to be much more
-        about animations than single frames.
-      </li>
-      <li>
-        You could have some hitches starting and stopping the machines. It looks
-        like the system that keeps track of the number of vCPUs you have running
-        isn't updated live. I've had cases where I've shut an instance down then
-        tried to start it back a minute or so later and couldn't because it said
-        I hit the vCPU limit. After waiting a bit, it fixed itself and I could
-        launch again
-      </li>
-      <li>
-        Sometimes you get an error like this if there isn't enough capacity on
-        the AWS site: An error occurred (InsufficientInstanceCapacity) when
-        calling the RunInstances operation (reached max retries: 2): We
-        currently do not have sufficient p3.8xlarge capacity in the Availability
-        Zone you requested (us-east-1c). Our system will be working on
-        provisioning additional capacity. You can currently get p3.8xlarge
-        capacity by not specifying an Availability Zone in your request or
-        choosing us-east-1b, us-east-1d, us-east-1f.
-      </li>
-    </ul>
+    <div id="prose_wrapper">
+      <h3>Notes</h3>
+      <ul>
+        <li>
+          These times are for rendings of the
+          <a href="https://download.blender.org/demo/cycles/loft.blend"
+            >loft file</a
+          >
+          from the
+          <a href="https://download.blender.org/demo/cycles/"
+            >Blender cycles demo files</a
+          >
+          on Amazon AWS EC2 instances. You can download it and time a render to
+          do a comparison
+        </li>
+        <li>
+          I'm not interested in animation at this point. Just still frames. So
+          this look at the serivces is in that light
+        </li>
+        <li>
+          The renders were done with 'CUDA' on the windows machine and EC2
+          instances and 'METAL' for the mac
+        </li>
+        <li>
+          My 2021 M1 Max MacBookPro (model 18.4) with 64GB of memory and windows
+          machine with a NVIDIA GTX 1080 card in it are also listed as 'MBP' and
+          '1080' respectively
+        </li>
+        <li>The prices are based on On-Demand usage at the time I ran them</li>
+        <li>The octanebench score on my windows machine is 135.33.</li>
+        <li>
+          I tried to run octanebench on my mac but it says no supported GPU is
+          found
+        </li>
+        <li>
+          The methodology was to do three renders of the file. The longest time
+          was thrown out and the other two were averaged
+        </li>
+        <li>
+          The
+          <a
+            href="https://github.com/alanwsmith/ec2-blender-renderer.alanwsmith.com/tree/main/scripts/profile_machine/results"
+            >raw results are here</a
+          >
+        </li>
+        <li>
+          The prices do not include startup and shutdown times for the EC2
+          instances. That cost would need to be calculated based on the use case
+        </li>
+        <li>
+          There will also be some cost for the first time you setup a machine to
+          get all the installs in place. (An AMI could take care of that aspect
+          though)
+        </li>
+        <li>
+          You have to request quota updates to get access to the 'p' and 'g'
+          type instances. As of press time, this is
+          <a
+            href="https://us-east-1.console.aws.amazon.com/servicequotas/home/services/ec2/quotas"
+            >the page to request quota increases</a
+          >. Search for 'demand'. Then put in requests for 'Running On-Demand G
+          and VT instances' and 'Running On-Demand P instances'. The biggest
+          machine 'p' instance is 96 vCPU and the biggest 'g' is 192. They
+          didn't give me the 192 max on the 'g' instances the first time I
+          asked.
+        </li>
+        <li>
+          The p4d.24xlarge was not available in `us-east-1a` when i tested.
+          (TODO confirm if you did `1b`, `1c`, or `1d` based off the error
+          message
+        </li>
+        <li>
+          I looked at <a href="https://garagefarm.net">garagefarm.net</a> and
+          from what I can tell from their pricing calculator the minumum chart
+          is &dollar;1.
+        </li>
+        <li>
+          The time from garagefarm said 0h 0min. So, not sure how long it would
+          actually take.
+        </li>
+        <li>
+          The <a href="https://blendergrid.com">blendergrid.com</a> pricing
+          calculor isn't much help with single frame setups and doesn't look
+          like it's working right for me. I adjusted the number of notes from 5
+          to 50 and the price didn't change which seems weird. ,
+        </li>
+        <li>
+          <a href="https://render.st/plans-pricing/">render steet</a> estimate:
+          &dollar;1.09 - finishing in 1-2 hours. These places seem to be much
+          more about animations than single frames.
+        </li>
+        <li>
+          You could have some hitches starting and stopping the machines. It
+          looks like the system that keeps track of the number of vCPUs you have
+          running isn't updated live. I've had cases where I've shut an instance
+          down then tried to start it back a minute or so later and couldn't
+          because it said I hit the vCPU limit. After waiting a bit, it fixed
+          itself and I could launch again
+        </li>
+        <li>
+          Sometimes you get an error like this if there isn't enough capacity on
+          the AWS site: An error occurred (InsufficientInstanceCapacity) when
+          calling the RunInstances operation (reached max retries: 2): We
+          currently do not have sufficient p3.8xlarge capacity in the
+          Availability Zone you requested (us-east-1c). Our system will be
+          working on provisioning additional capacity. You can currently get
+          p3.8xlarge capacity by not specifying an Availability Zone in your
+          request or choosing us-east-1b, us-east-1d, us-east-1f.
+        </li>
+      </ul>
+    </div>
 
     <script>
       Chart.register(ChartDataLabels)
@@ -199,6 +208,13 @@
           "name": "g5.12x",
           "price": "0.19",
           "seconds": 119
+        },
+        {
+          "id": "$0.45~p3.8x",
+          "label": "2m11s",
+          "name": "p3.8x",
+          "price": "0.45",
+          "seconds": 131
         },
         {
           "id": "$0.92~p2.16x",
